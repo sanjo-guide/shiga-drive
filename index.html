@@ -537,7 +537,7 @@
         photoQuery: "金剛輪寺 紅葉",
         webUrl: "https://kongourinji.jp/",
         koyoUrl: "https://weathernews.jp/koyo/spot/26009/",
-        photo: null
+        photo: { file: "Shōhōzan Kongōrin-ji 20221117 52.jpg", author: "先従隗始", license: "CC0" }
       },
       {
         id: "tarobogu", cat: "spot",
@@ -615,7 +615,7 @@
         photoQuery: "瓦屋禅寺 紅葉",
         webUrl: "",
         koyoUrl: "",
-        photo: null
+        photo: { file: "Kawaraya Temple , 瓦屋禅寺 - panoramio (4).jpg", author: "z tanuki", license: "CC BY 3.0" }
       },
       {
         id: "chojuji", cat: "spot",
@@ -641,7 +641,7 @@
         photoQuery: "長寿寺 湖南三山 紅葉",
         webUrl: "",
         koyoUrl: "https://weathernews.jp/koyo/spot/26028/",
-        photo: null
+        photo: { file: "Chojuji01s3200.jpg", author: "663highland", license: "CC BY 2.5" }
       },
       {
         id: "zensuiji", cat: "spot",
@@ -667,7 +667,7 @@
         photoQuery: "善水寺 常楽寺 紅葉",
         webUrl: "http://www.zensuiji.jp/",
         koyoUrl: "https://weathernews.jp/koyo/spot/26029/",
-        photo: null
+        photo: { file: "Three-story Pagoda of Joraku-ji Temple in autumn, Konan, Shiga.jpg", author: "ONO Masanobu", license: "CC0", note: { ja: "常楽寺の三重塔", ko: "조라쿠지 삼중탑" } }
       },
       {
         id: "okaki", cat: "food",
@@ -694,7 +694,7 @@
         photoQuery: "岡喜本店 近江牛",
         webUrl: "https://www.okakihonten.jp/honten/",
         koyoUrl: "",
-        photo: null
+        photo: { file: "近江牛.jpg", author: "Syced", license: "CC0", note: { ja: "イメージ（近江牛）", ko: "이미지 (오미규)" } }
       },
       {
         id: "morishima", cat: "food",
@@ -721,7 +721,7 @@
         photoQuery: "毛利志満 近江八幡本店",
         webUrl: "https://www.oumi-usi.co.jp/",
         koyoUrl: "",
-        photo: null
+        photo: { file: "近江牛.jpg", author: "Syced", license: "CC0", note: { ja: "イメージ（近江牛）", ko: "이미지 (오미규)" } }
       },
       {
         id: "ikedafarm", cat: "food",
@@ -800,7 +800,7 @@
         photoQuery: "クラブハリエ 八日市の杜",
         webUrl: "",
         koyoUrl: "",
-        photo: null
+        photo: { file: "Club-Harie-Baumkuchen---2025-02-21 006.jpg", author: "RuinDig/Yuki Uchida", license: "CC BY 4.0", note: { ja: "イメージ（クラブハリエのバームクーヘン）", ko: "이미지 (클럽하리에 바움쿠헨)" } }
       },
       {
         id: "happunoyu", cat: "onsen",
@@ -827,7 +827,7 @@
         photoQuery: "八風の湯 露天風呂",
         webUrl: "https://www.happuno-yu.com/eigenji/",
         koyoUrl: "",
-        photo: null
+        photo: { file: "Echigawa Eigenji.jpg", author: "Bakkai", license: "CC BY-SA 3.0", note: { ja: "イメージ（永源寺付近の愛知川）", ko: "이미지 (에이겐지 부근 에치가와)" } }
       }
     ];
 
@@ -915,7 +915,7 @@
           <img src="${photoSrc(f)}" alt="${name}" loading="lazy" class="w-full aspect-[16/10] object-cover rounded-t-2xl bg-[#EAE6DF]"
                onerror="this.parentElement.outerHTML='<div class=&quot;photo-fallback -mx-5 -mt-5 mb-4 rounded-t-2xl h-24&quot;></div>'">
           <figcaption class="px-5 pt-1 text-[10px] text-[#8A857D] text-right">
-            ${t.photoBy}: <a href="${photoPage(f)}" target="_blank" rel="noopener noreferrer" class="underline">${item.photo.author} / ${item.photo.license}</a>
+            ${item.photo.note ? item.photo.note[currentLang] + " ・ " : ""}${t.photoBy}: <a href="${photoPage(f)}" target="_blank" rel="noopener noreferrer" class="underline">${item.photo.author} / ${item.photo.license}</a>
           </figcaption>
         </figure>`;
     }
@@ -971,7 +971,7 @@
 
     function renderCredits() {
       document.getElementById("creditList").innerHTML = items.filter(i => i.photo).map(i =>
-        `<li>${i.ja.name}：<a href="${photoPage(i.photo.file)}" target="_blank" rel="noopener noreferrer" class="underline">${i.photo.author}</a>（${i.photo.license}）</li>`
+        `<li>${i.ja.name}${i.photo.note ? "（" + i.photo.note.ja + "）" : ""}：<a href="${photoPage(i.photo.file)}" target="_blank" rel="noopener noreferrer" class="underline">${i.photo.author}</a>（${i.photo.license}）</li>`
       ).join("");
     }
 
