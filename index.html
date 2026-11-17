@@ -122,7 +122,7 @@
 
       <div class="grid grid-cols-3 gap-2">
         <button onclick="selectPlan('A')" id="btnPlanA" class="tab-active border rounded-xl py-3 px-2 text-xs sm:text-sm font-bold transition text-center">
-          PLAN A<br><span id="tabPlanASub" class="text-[11px] font-normal">ライトアップ2か所</span>
+          PLAN A<br><span id="tabPlanASub" class="text-[11px] font-normal">夜2か所</span>
         </button>
         <button onclick="selectPlan('B')" id="btnPlanB" class="tab-inactive border rounded-xl py-3 px-2 text-xs sm:text-sm font-bold transition text-center">
           PLAN B<br><span id="tabPlanBSub" class="text-[11px] font-normal">昼＋夜＆温泉</span>
@@ -226,7 +226,7 @@
         ],
         sec1Title: "🗺️ 選べる3つのモデルコース",
         sec1Sub: "タップで切り替え（時間はすべて目安）",
-        tabPlanASub: "ライトアップ2か所",
+        tabPlanASub: "夜2か所",
         tabPlanBSub: "昼＋夜＆温泉",
         tabPlanCSub: "湖東三山",
         sec2Title: "📍 車で行きたいスポット＆グルメ",
@@ -286,7 +286,7 @@
         ],
         sec1Title: "🗺️ 3가지 추천 코스",
         sec1Sub: "탭해서 전환 (시간은 모두 기준)",
-        tabPlanASub: "라이트업 2곳",
+        tabPlanASub: "밤 2곳",
         tabPlanBSub: "낮+밤 & 온천",
         tabPlanCSub: "고토산잔",
         sec2Title: "📍 차로 가고 싶은 명소 & 맛집",
@@ -747,7 +747,7 @@
         photoQuery: "池田牧場 香想 ジェラート",
         webUrl: "",
         koyoUrl: "",
-        photo: { src: "https://live.staticflickr.com/248/456343218_c255dccf44.jpg", page: "https://www.flickr.com/photos/94637630@N00/456343218", author: "rhosoi", license: "CC BY 2.0", note: { ja: "池田牧場のジェラート", ko: "이케다 목장 젤라또" } }
+        photo: { src: "https://live.staticflickr.com/248/456343218_c255dccf44.jpg", page: "https://www.flickr.com/photos/94637630@N00/456343218", author: "rhosoi", license: "CC BY 2.0", note: { ja: "池田牧場のジェラート", ko: "이케다 목장 젤라또" }, pos: "50% 15%" }
       },
       {
         id: "hitomiwinery", cat: "food",
@@ -912,7 +912,7 @@
       const f = item.photo;
       return `
         <figure class="-mx-5 -mt-5 mb-4">
-          <img src="${photoSrc(f)}" alt="${name}" loading="lazy" class="w-full aspect-[16/10] object-cover rounded-t-2xl bg-[#EAE6DF]"
+          <img src="${photoSrc(f)}" alt="${name}" loading="lazy" class="w-full aspect-[16/10] object-cover rounded-t-2xl bg-[#EAE6DF]" style="object-position:${f.pos || "50% 50%"}"
                onerror="this.parentElement.outerHTML='<div class=&quot;photo-fallback -mx-5 -mt-5 mb-4 rounded-t-2xl h-24&quot;></div>'">
           <figcaption class="px-5 pt-1 text-[10px] text-[#8A857D] text-right">
             ${item.photo.note ? item.photo.note[currentLang] + " ・ " : ""}${t.photoBy}: <a href="${photoPage(f)}" target="_blank" rel="noopener noreferrer" class="underline">${item.photo.author} / ${item.photo.license}</a>
