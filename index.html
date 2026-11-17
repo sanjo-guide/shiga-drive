@@ -43,7 +43,6 @@
     }
   </style>
 </head>
-<!-- 初期状態で韓国語併記をON（show-ko）に設定 -->
 <body class="pb-32 show-ko">
 
   <!-- ヘッダー -->
@@ -194,10 +193,10 @@
         <div>
           <h2 class="text-lg font-black text-stone-800">📍 車必須の厳選スポット＆グルメ（全18選）</h2>
           <p class="text-xs text-stone-500">
-            写真・Googleマップ・公式サイト・最新紅葉状況を完備。カードの「＋候補に追加」でリスト化できます！
+            各カードの「📷 本物の現地写真を見る」から実際の風景・料理写真を確認できます！
           </p>
           <p class="ko-text text-xs text-red-700 font-medium mt-0.5">
-            구글맵·공식 사이트·실시간 단풍 현황 링크 완비! 카드를 선택해 가고 싶은 리스트에 추가하세요.
+            각 카드의 '📷 실제 사진 보기' 버튼을 누르면 실제 단풍 풍경과 음식 사진을 바로 확인할 수 있습니다!
           </p>
         </div>
         <div class="flex gap-1.5 overflow-x-auto pb-1">
@@ -290,7 +289,9 @@
       {
         id: "eigenji",
         cat: "main",
-        tag: "✨ 主役ライトアップ①",
+        emoji: "🍁✨",
+        bgClass: "from-red-950 via-red-800 to-amber-700",
+        tag: "主役ライトアップ①",
         koTag: "메인 야간 라이트업①",
         name: "大本山 永源寺（えいげんじ）",
         koName: "다이혼잔 에이겐지 (히가시오미시)",
@@ -302,7 +303,7 @@
         koAccess: "역에서 멀고 야간 라이트업 시간대에는 돌아오는 버스가 없어 자동차 필수!",
         desc: "愛知川の渓谷に佇む臨済宗永源寺派の大本山。参道の石段を覆い尽くすカエデやモミジがライトアップされ、幻想的な美しさに包まれる関西屈指の紅葉名所。",
         koDesc: "에치가와 계곡에 자리한 단풍 명소. 돌계단을 뒤덮은 단풍나무가 조명에 비쳐 환상적인 분위기를 자아내는 간사이 대표 단풍 사찰.",
-        img: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80",
+        photoQuery: "滋賀 永源寺 紅葉 ライトアップ",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=大本山+永源寺+滋賀",
         webUrl: "https://eigenji-t.jp/",
         koyoUrl: "https://weathernews.jp/koyo/spot/26005/"
@@ -310,7 +311,9 @@
       {
         id: "kyorinbo",
         cat: "main",
-        tag: "✨ 主役ライトアップ②",
+        emoji: "🎍🍁",
+        bgClass: "from-stone-900 via-red-900 to-amber-800",
+        tag: "主役ライトアップ②",
         koTag: "메인 야간 라이트업②",
         name: "石の寺 教林坊（きょうりんぼう）",
         koName: "이시노데라 교린보 (오미하치만시 아즈치)",
@@ -321,8 +324,8 @@
         access: "山裾の集落奥にあり、夜間の公共交通機関は皆無のため車必須（無料駐車場あり）。",
         koAccess: "산기슭 깊은 곳에 위치해 야간 대중교통이 전혀 없으므로 자동차 필수 (무료 주차장 완비).",
         desc: "聖徳太子創建、小堀遠州作庭の名勝庭園。巨石と苔、2,000坪の竹林と約300本の真っ赤なモミジがライトアップで浮かび上がる別世界。",
-        koDesc: "거대한 바위와 푸른 이끼, 대나무숲과 약 300그루의 새빨간 단풍이 조명에浮かび上がる 환상적인 정원.",
-        img: "https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=800&q=80",
+        koDesc: "거대한 바위와 푸른 이끼, 대나무숲과 약 300그루의 새빨간 단풍이 조명에 떠오르는 환상적인 정원.",
+        photoQuery: "滋賀 教林坊 紅葉 ライトアップ",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=石の寺+教林坊+滋賀",
         webUrl: "https://www.biwako-visitors.jp/spot/detail/853/",
         koyoUrl: "https://weathernews.jp/koyo/spot/26014/"
@@ -332,7 +335,9 @@
       {
         id: "hyakusaiji",
         cat: "spot",
-        tag: "🍁 湖東三山・車必須",
+        emoji: "🏯🍁",
+        bgClass: "from-red-800 to-amber-700",
+        tag: "湖東三山・車必須",
         koTag: "고토산잔·차량 필수",
         name: "百済寺（ひゃくさいじ）",
         koName: "백제사 / 햐쿠사이지 (히가시오미시)",
@@ -344,7 +349,7 @@
         koAccess: "역에서 매우 멀고 배차 간격이 긴 커뮤니티 버스를 갈아타야 해서 대중교통 접근성이 극히 나쁨. 차로 가야만 편하게 갈 수 있는 곳!",
         desc: "606年に聖徳太子が百済（백제）からの渡来人のために創建した滋賀最古級の古刹。巨石の石垣と苔むした参道、琵琶湖まで見渡す「天下遠望の名園」の紅葉が圧巻。",
         koDesc: "606년 쇼토쿠 태자가 백제 도래인을 위해 창건한 고찰. 거대한 돌담과 이끼 낀 참배길, 비와호까지 내려다보이는 정원의 단풍이 압권.",
-        img: "https://images.unsplash.com/photo-1574236170880-fbbca132d83d?auto=format&fit=crop&w=800&q=80",
+        photoQuery: "滋賀 百済寺 紅葉",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=百済寺+滋賀",
         webUrl: "http://www.hyakusaiji.jp/",
         koyoUrl: "https://weathernews.jp/koyo/spot/26003/"
@@ -352,7 +357,9 @@
       {
         id: "saimyoji",
         cat: "spot",
-        tag: "🌸 冬桜×紅葉コラボ",
+        emoji: "🌸🍁",
+        bgClass: "from-pink-700 via-red-700 to-amber-700",
+        tag: "冬桜×紅葉コラボ",
         koTag: "겨울 벚꽃×단풍 동시 감상",
         name: "西明寺（さいみょうじ）",
         koName: "사이묘지 (고라초)",
@@ -364,7 +371,7 @@
         koAccess: "역에서 먼 국도 307호선 산기슭에 위치해 자동차 필수 (무료 대형 주차장 완비).",
         desc: "国宝の本堂・三重塔と約1,000本のカエデに加え、秋〜冬に満開を迎える天然記念物「不断桜（冬桜）」があり、桜と真っ赤な紅葉の同時鑑賞ができる希少な名所。",
         koDesc: "국보 본당·삼중탑과 1,000그루의 단풍, 그리고 가을~겨울에 만개하는 천연기념물 '후단자쿠라(겨울 벚꽃)'가 있어 벚꽃과 단풍을 동시에 볼 수 있는 명소.",
-        img: "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=800&q=80",
+        photoQuery: "湖東三山 西明寺 紅葉 不断桜",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=湖東三山+西明寺+滋賀",
         webUrl: "https://www.saimyouji.com/",
         koyoUrl: "https://weathernews.jp/koyo/spot/26001/"
@@ -372,7 +379,9 @@
       {
         id: "kongorinji",
         cat: "spot",
-        tag: "🍁 血染めのもみじ",
+        emoji: "🍁🗿",
+        bgClass: "from-red-900 to-red-700",
+        tag: "血染めのもみじ",
         koTag: "진홍빛 단풍 터널",
         name: "金剛輪寺（こんごうりんじ）",
         koName: "곤고린지 (아이쇼초)",
@@ -384,7 +393,7 @@
         koAccess: "노선버스가 거의 없어 자동차 이동 필수.",
         desc: "「血染めのもみじ」と呼ばれる鮮烈な深紅のカエデが有名。総門から国宝の本堂まで続く約500mの参道に、千躰地蔵尊と紅葉のトンネルが続く。",
         koDesc: "'피로 물든 단풍'이라 불리는 강렬한 진홍빛 단풍이 유명. 국보 본당까지 이어지는 참배길에 천체지장보살과 단풍 터널이 펼쳐짐.",
-        img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80",
+        photoQuery: "滋賀 金剛輪寺 紅葉",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=金剛輪寺+滋賀",
         webUrl: "https://kongourinji.jp/",
         koyoUrl: "https://weathernews.jp/koyo/spot/26002/"
@@ -392,7 +401,9 @@
       {
         id: "tarobogu",
         cat: "spot",
-        tag: "⛩️ 中腹まで車で直行",
+        emoji: "⛩️⛰️",
+        bgClass: "from-orange-800 to-amber-700",
+        tag: "中腹まで車で直行",
         koTag: "차로 산 중턱까지 직행",
         name: "太郎坊宮（阿賀神社）",
         koName: "타로보구 신사 (히가시오미시)",
@@ -404,7 +415,7 @@
         koAccess: "차가 없으면 산 아래에서부터 740계단 이상의 가파른 돌계단을 걸어 올라가야 하지만, 차를 타면 중턱 주차장까지 단번에 올라갈 수 있어 매우 편리함!",
         desc: "赤神山の中腹に鎮座する勝運の神様。巨大な夫婦岩の間を通り抜ける参道や、舞台造りの境内から紅葉と東近江の田園風景を一望できる。",
         koDesc: "아카가미산 중턱에 자리한 승운의 신사. 거대한 부부바위 사이를 지나는 참배길과 전망대에서 단풍과 히가시오미 평야를 한눈에 조망 가능.",
-        img: "https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?auto=format&fit=crop&w=800&q=80",
+        photoQuery: "滋賀 太郎坊宮 紅葉 夫婦岩",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=太郎坊宮+滋賀",
         webUrl: "http://www.tarobo.sakura.ne.jp/",
         koyoUrl: "https://www.biwako-visitors.jp/spot/detail/892/"
@@ -412,7 +423,9 @@
       {
         id: "kawarayazenji",
         cat: "spot",
-        tag: "🍁 山中の静かな穴場",
+        emoji: "🍂🏯",
+        bgClass: "from-amber-900 to-stone-700",
+        tag: "山中の静かな穴場",
         koTag: "산속의 조용한 숨은 단풍 명소",
         name: "瓦屋禅寺（かわらやぜんじ）",
         koName: "가와라야젠지 (히가시오미시)",
@@ -424,15 +437,17 @@
         koAccess: "대중교통 없음. 산길을 차로 올라가야만 닿을 수 있는 완전 차량 전용 명소.",
         desc: "聖徳太子創建と伝わる山中の禅寺。観光バスがほとんど入らない静寂の境内で、重厚な茅葺き屋根の本堂と鮮やかなモミジのコントラストを楽しめる。",
         koDesc: "관광버스가 거의 오지 않는 고즈넉한 산속 선종 사찰. 중후한 초가지붕 본당과 선명한 단풍의 조화를 조용히 감상할 수 있음.",
-        img: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
+        photoQuery: "東近江市 瓦屋禅寺 紅葉",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=瓦屋禅寺+東近江市",
         webUrl: "https://www.kawarayazenji.com/",
-        koyoUrl: "https://www.google.com/maps/search/?api=1&query=瓦屋禅寺+紅葉"
+        koyoUrl: "https://www.google.com/maps/search/?api=1&query=瓦屋禅寺+東近江市"
       },
       {
         id: "eigenjidam",
         cat: "spot",
-        tag: "🚗 絶景紅葉ドライブウェイ",
+        emoji: "🚗🏞️",
+        bgClass: "from-teal-800 to-amber-700",
+        tag: "絶景紅葉ドライブウェイ",
         koTag: "절경 단풍 드라이브 코스",
         name: "永源寺ダム・もみじ街道（国道421号）",
         koName: "에이겐지 댐·단풍 가도 (국도 421호선)",
@@ -444,7 +459,7 @@
         koAccess: "보도나 버스 정류장이 없는 완전 드라이브 전용 코스.",
         desc: "永源寺から国道421号をさらに少し奥へ進んだ渓谷ルート。エメラルドグリーンのダム湖と周囲の山々の紅葉を車窓から楽しめる。",
         koDesc: "에이겐지에서 국도 421호선을 따라 조금 더 들어가면 나오는 계곡 드라이브 코스. 댐 호수와 산의 단풍을 차창 밖으로 만끽 가능.",
-        img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+        photoQuery: "永源寺ダム 紅葉",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=永源寺ダム",
         webUrl: "https://www.biwako-visitors.jp/spot/detail/901/",
         koyoUrl: "https://www.google.com/maps/search/?api=1&query=永源寺ダム"
@@ -452,7 +467,9 @@
       {
         id: "shoboji",
         cat: "spot",
-        tag: "🍁 隠れた名庭の紅葉",
+        emoji: "🍁🪨",
+        bgClass: "from-red-800 to-stone-800",
+        tag: "隠れた名庭の紅葉",
         koTag: "숨겨진 명정원의 단풍",
         name: "正法寺（しょうぼうじ）",
         koName: "쇼보지 (히노초)",
@@ -464,7 +481,7 @@
         koAccess: "역에서 떨어진 산간 마을에 위치해 자동차 이동이 압도적으로 편리함 (무료 주차장 완비).",
         desc: "春の藤の寺として知られるが、秋は白砂の庭園を囲むカエデが真っ赤に染まる穴場名所。人が少なく落ち着いて写真撮影ができる。",
         koDesc: "백사 정원을 둘러싼 단풍나무가 붉게 물드는 숨은 명소. 관광객이 적어 여유롭게 사진 촬영 가능.",
-        img: "https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=800&q=80",
+        photoQuery: "滋賀 日野町 正法寺 紅葉",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=正法寺+滋賀県日野町",
         webUrl: "https://www.biwako-visitors.jp/spot/detail/957/",
         koyoUrl: "https://www.biwako-visitors.jp/spot/detail/957/"
@@ -472,7 +489,9 @@
       {
         id: "chojuji",
         cat: "spot",
-        tag: "🍁 湖南三山・紅葉トンネル",
+        emoji: "🍁⛩️",
+        bgClass: "from-red-700 to-orange-700",
+        tag: "湖南三山・紅葉トンネル",
         koTag: "고난산잔·단풍 터널",
         name: "長寿寺（ちょうじゅじ）",
         koName: "조주지 (고난시)",
@@ -484,7 +503,7 @@
         koAccess: "역에서 멀어 교토에서 고속도로로 시가에 진입할 때 차로 들르기 최적!",
         desc: "国宝の本堂へと続く約200mの参道がイロハモミジのトンネルになる「湖南三山」のひとつ。往路の13時〜14時台の立ち寄りにぴったり。",
         koDesc: "국보 본당으로 이어지는 약 200m 참배길이 단풍 터널을 이루는 '고난산잔' 중 하나. 가는 길에 들르기 좋음.",
-        img: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&w=800&q=80",
+        photoQuery: "滋賀 湖南三山 長寿寺 紅葉",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=湖南三山+長寿寺+滋賀",
         webUrl: "https://www.biwako-visitors.jp/spot/detail/773/",
         koyoUrl: "https://weathernews.jp/koyo/spot/26008/"
@@ -492,7 +511,9 @@
       {
         id: "zensuiji",
         cat: "spot",
-        tag: "🍁 湖南三山・国宝本堂",
+        emoji: "🍁🏯",
+        bgClass: "from-amber-800 to-red-800",
+        tag: "湖南三山・国宝本堂",
         koTag: "고난산잔·국보 본당",
         name: "善水寺（ぜんすいじ）・常楽寺（じょうらくじ）",
         koName: "젠스이지 & 조라쿠지 (고난시)",
@@ -504,7 +525,7 @@
         koAccess: "산기슭에 흩어져 있어 대중교통으로는 이동 불가. 차로는 10분이면 이동 가능.",
         desc: "長寿寺と並び「湖南三山」を構成する国宝寺院。善水寺は山腹の境内を彩る大モミジ、常楽寺は国宝三重塔と紅葉の調和が見事。",
         koDesc: "조주지와 함께 '고난산잔'을 이루는 국보 사찰. 젠스이지의 거대한 단풍과 조라쿠지의 국보 삼중탑 단풍이 아름다움.",
-        img: "https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=800&q=80",
+        photoQuery: "滋賀 善水寺 常楽寺 紅葉",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=善水寺+滋賀",
         webUrl: "http://www.zensuiji.jp/",
         koyoUrl: "https://weathernews.jp/koyo/spot/26009/"
@@ -514,7 +535,9 @@
       {
         id: "okaki",
         cat: "food",
-        tag: "🍖 近江牛・火曜営業",
+        emoji: "🍖🥩",
+        bgClass: "from-stone-800 to-red-900",
+        tag: "近江牛・火曜営業",
         koTag: "오미규 직영점·화요일 영업",
         name: "近江牛 岡喜（おかき）本店",
         koName: "오미규 오카키 본점 (류오초)",
@@ -526,7 +549,7 @@
         koAccess: "전원 지대 한가운데 위치해 자동차 필수 (80대 대형 주차장 완비).",
         desc: "自社牧場直営の近江牛老舗レストラン。2,000円台の近江牛ハンバーグや牛鍋から、ステーキ重・すき焼きまで揃い、13時過ぎのランチにも帰路ディナーにも最高。",
         koDesc: "자체 목장 직영 오미규 노포 레스토랑. 합리적인 가격의 오미규 함박스테이크와 소고기 전골부터 스테이크 덮밥·스키야키까지 점심·저녁 모두 강력 추천.",
-        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+        photoQuery: "竜王 近江牛 岡喜本店 料理",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=近江牛+岡喜本店+竜王",
         webUrl: "https://www.okaki.co.jp/restaurant/honten/",
         koyoUrl: ""
@@ -534,7 +557,9 @@
       {
         id: "morishima",
         cat: "food",
-        tag: "🥩 老舗近江牛・火曜営業",
+        emoji: "🥩🍲",
+        bgClass: "from-stone-900 to-amber-900",
+        tag: "老舗近江牛・火曜営業",
         koTag: "오미규 노포·화요일 영업",
         name: "近江牛 毛利志満（もりしま）近江八幡本店",
         koName: "오미규 모리시마 오미하치만 본점",
@@ -546,7 +571,7 @@
         koAccess: "역에서 떨어진 국도 8호선 대로변에 위치해 차량 접근에 최적화된 본점.",
         desc: "自社牧場で育てた極上近江牛を味わえる名店。名物の石焼やステーキ御膳、すき焼き、しゃぶしゃぶなど贅沢なランチ・ディナーに。",
         koDesc: "직영 목장에서 기른 최상급 오미규 전문점. 명물 돌구이(이시야키), 스테이크 정식, 스키야키 등 품격 있는 식사 가능.",
-        img: "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80",
+        photoQuery: "近江牛 毛利志満 近江八幡本店 料理",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=近江牛+毛利志満+近江八幡本店",
         webUrl: "https://www.omigyu-morishima.com/",
         koyoUrl: ""
@@ -554,7 +579,9 @@
       {
         id: "yakinikuyui",
         cat: "food",
-        tag: "🔥 近江牛焼肉・夜ディナー",
+        emoji: "🔥🥩",
+        bgClass: "from-red-950 to-stone-800",
+        tag: "近江牛焼肉・夜ディナー",
         koTag: "오미규 야키니쿠·저녁 디너",
         name: "近江牛 焼肉 結（ゆい）",
         koName: "오미규 야키니쿠 유이 (류오초)",
@@ -566,7 +593,7 @@
         koAccess: "류오IC로 향하는 도로변에 위치해 자동차 필수 (무료 주차장 완비).",
         desc: "ライトアップを見終わった後（19:30頃〜）、高速に乗る前にガッツリ近江牛焼肉を食べるならここ！高コスパで肉質抜群の人気店。",
         koDesc: "야간 라이트업 관람 후(19:30경~), 고속도로를 타기 전에 가성비 최고급 오미규 야키니쿠를 즐기기에 완벽한 인기 맛집.",
-        img: "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=800&q=80",
+        photoQuery: "滋賀 竜王 焼肉 結",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=焼肉+結+滋賀県竜王町",
         webUrl: "https://tabelog.com/shiga/A2503/A250301/25009680/",
         koyoUrl: ""
@@ -574,7 +601,9 @@
       {
         id: "ikedafarm",
         cat: "food",
-        tag: "🍨 山あいの牧場ジェラート",
+        emoji: "🍨🐄",
+        bgClass: "from-emerald-800 to-teal-700",
+        tag: "山あいの牧場ジェラート",
         koTag: "산속 목장 수제 젤라또",
         name: "池田牧場 イタリアンジェラート「香想（かそう）」",
         koName: "이케다 목장 이탈리안 젤라또 '카소'",
@@ -586,7 +615,7 @@
         koAccess: "산속 목장 부지 내에 있어 자동차 필수. 에이겐지 가기 전 들르기 최고!",
         desc: "永源寺のすぐ近くにある牧場直営ジェラート店。搾りたて生乳を使った濃厚ミルクや季節のフルーツジェラートが絶品。",
         koDesc: "에이겐지 바로 근처 목장 직영 젤라또 가게. 갓 짜낸 신선한 우유로 만든 진한 밀크 젤라또와 제철 과일 맛이 일품.",
-        img: "https://images.unsplash.com/photo-1557142046-c704a3adf364?auto=format&fit=crop&w=800&q=80",
+        photoQuery: "東近江 池田牧場 ジェラート 香想",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=池田牧場+香想+東近江",
         webUrl: "https://www.ikedabokujyo.com/",
         koyoUrl: ""
@@ -594,7 +623,9 @@
       {
         id: "hitomiwinery",
         cat: "food",
-        tag: "🍷 ワイナリー＆焼きたてパン",
+        emoji: "🍷🥖",
+        bgClass: "from-purple-900 to-stone-800",
+        tag: "ワイナリー＆焼きたてパン",
         koTag: "와이너리 & 갓 구운 빵",
         name: "ヒトミワイナリー",
         koName: "히토미 와이너리 (히가시오미시)",
@@ -604,9 +635,9 @@
         koHours: "11:00~17:00 ※화요일 영업",
         access: "国道421号沿いの車専用立地（大型駐車場あり）。",
         koAccess: "국도 421호선 변에 위치한 드라이브 코스 명소 (주차장 완비).",
-        desc: "日本珍しい「にごりワイン」専門のワイナリー。併設ベーカリーの香ばしいパンが人気で、ドライバー以外の同乗者はワイン試飲も可能。",
+        desc: "日本でも珍しい「にごりワイン」専門のワイナリー。併設ベーカリーの香ばしいパンが人気で、ドライバー以外の同乗者はワイン試飲も可能。",
         koDesc: "일본에서 보기 드문 '니고리 와인(탁주 스타일 와인)' 전문 와이너리. 베이커리의 빵도 맛있으며 운전자 외 동승자는 와인 시음 가능.",
-        img: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80",
+        photoQuery: "東近江 ヒトミワイナリー パン",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=ヒトミワイナリー+東近江",
         webUrl: "https://www.hitomiwinery.com/",
         koyoUrl: ""
@@ -614,7 +645,9 @@
       {
         id: "taneyayokaichi",
         cat: "food",
-        tag: "🍰 森の中の限定カフェ",
+        emoji: "🍰🌲",
+        bgClass: "from-amber-800 to-emerald-900",
+        tag: "森の中の限定カフェ",
         koTag: "숲속의 한정판 바움쿠헨 카페",
         name: "たねや 八日市の杜（ようかいちのもり）",
         koName: "타네야 요카이치노모리 (히가시오미시)",
@@ -626,7 +659,7 @@
         koAccess: "역에서 떨어진 숲속에 자리해 차로 방문하기 최적 (무료 주차장 완비).",
         desc: "静かな森の中に佇む「たねや・クラブハリエ」の特別店舗。ここだけの限定メニュー「焼きたてバームクーヘン」や季節の和菓子を落ち着いた空間で楽しめる。",
         koDesc: "조용한 숲속에 자리한 '타네야·클럽하리에' 특별 매장. 이곳에서만 맛볼 수 있는 한정 메뉴 '갓 구운 바움쿠헨'과 디저트를 여유롭게 즐길 수 있음.",
-        img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80",
+        photoQuery: "たねや 八日市の杜 バームクーヘン",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=たねや+八日市の杜",
         webUrl: "https://taneya.jp/shop/shiga_yokaichi.html",
         koyoUrl: ""
@@ -636,7 +669,9 @@
       {
         id: "happunoyu",
         cat: "onsen",
-        tag: "♨️ 天然温泉＆近江牛夕食",
+        emoji: "♨️🍲",
+        bgClass: "from-cyan-900 to-stone-800",
+        tag: "天然温泉＆近江牛夕食",
         koTag: "천연 온천 & 오미규 저녁 식사",
         name: "永源寺温泉「八風の湯（はっぷうのゆ）」",
         koName: "에이겐지 온천 '핫푸노유'",
@@ -648,7 +683,7 @@
         koAccess: "에이겐지 바로 옆이지만 야간 대중교통이 없어 자동차 필수 (무료 주차장 완비).",
         desc: "ライトアップ鑑賞で冷えた体を一気に温められる天然温泉！渓谷を望む露天風呂に加え、館内の食事処「山水」で近江牛すき焼き鍋や御膳も食べられる黄金スポット。",
         koDesc: "야간 라이트업 관람 후 차가워진 몸을 녹일 수 있는 천연 온천! 계곡 노천탕은 물론 관내 식당에서 오미규 스키야키 전골 등 저녁 식사까지 한 번에 해결 가능.",
-        img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
+        photoQuery: "永源寺温泉 八風の湯 露天風呂 食事",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=永源寺温泉+八風の湯",
         webUrl: "https://www.happuno-yu.com/eigenji/",
         koyoUrl: ""
@@ -722,8 +757,9 @@
       const filtered = currentFilter === "all" ? items : items.filter(i => i.cat === currentFilter);
       const html = filtered.map(item => {
         const isSelected = selectedIds.has(item.id);
+        const realPhotoUrl = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(item.photoQuery)}`;
         const koyoBtn = item.koyoUrl ? `
-          <a href="${item.koyoUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="flex-1 bg-amber-600 hover:bg-amber-700 text-white text-[11px] font-bold py-2 px-2 rounded-lg text-center transition">
+          <a href="${item.koyoUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="bg-amber-600 hover:bg-amber-700 text-white text-[11px] font-bold py-2 px-2.5 rounded-lg text-center transition">
             🍁 紅葉状況 <span class="ko-inline">/ 단풍현황</span> ↗
           </a>
         ` : "";
@@ -731,21 +767,19 @@
         return `
           <div class="bg-white rounded-2xl overflow-hidden border-2 transition shadow-sm flex flex-col justify-between ${isSelected ? 'card-selected' : 'border-stone-200 hover:border-stone-300'}">
             <div>
-              <!-- 画像ヘッダー -->
-              <div class="relative h-44 w-full bg-stone-200 overflow-hidden">
-                <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover" loading="lazy">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent"></div>
-                <div class="absolute top-2.5 left-2.5 flex flex-wrap gap-1">
+              <!-- クリーンなグラデーションヘッダー（偽写真を排除） -->
+              <div class="relative bg-gradient-to-br ${item.bgClass} p-4 text-white">
+                <div class="flex items-center justify-between gap-2 mb-3">
                   <span class="text-[11px] font-bold bg-white/95 text-stone-900 px-2.5 py-1 rounded-full shadow">
-                    ${item.tag} <span class="ko-inline text-red-700">/ ${item.koTag}</span>
+                    ${item.emoji} ${item.tag} <span class="ko-inline text-red-700">/ ${item.koTag}</span>
                   </span>
+                  <button onclick="toggleSelect('${item.id}')" class="text-xs font-black px-3 py-1.5 rounded-full shadow transition ${isSelected ? 'bg-red-600 text-white ring-2 ring-white' : 'bg-white/95 text-stone-800 hover:bg-white'}">
+                    ${isSelected ? '★ 選択中 / 선택됨' : '＋ 候補に追加 / 추가'}
+                  </button>
                 </div>
-                <button onclick="toggleSelect('${item.id}')" class="absolute top-2.5 right-2.5 text-xs font-black px-3 py-1.5 rounded-full shadow transition ${isSelected ? 'bg-red-600 text-white' : 'bg-white/95 text-stone-700 hover:bg-white'}">
-                  ${isSelected ? '★ 選択中 / 선택됨' : '＋ 候補に追加 / 추가'}
-                </button>
-                <div class="absolute bottom-2.5 left-3 right-3 text-white">
-                  <h3 class="font-black text-base sm:text-lg leading-snug drop-shadow">${item.name}</h3>
-                  <div class="ko-text text-xs font-bold text-amber-200 drop-shadow">${item.koName}</div>
+                <div>
+                  <h3 class="font-black text-base sm:text-lg leading-snug">${item.name}</h3>
+                  <div class="ko-text text-xs font-bold text-amber-200 mt-0.5">${item.koName}</div>
                 </div>
               </div>
 
@@ -767,15 +801,18 @@
               </div>
             </div>
 
-            <!-- 外部リンクボタン群 -->
-            <div class="px-4 pb-4 pt-1 flex flex-wrap gap-1.5">
-              <a href="${item.mapUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-[11px] font-bold py-2 px-2 rounded-lg text-center transition">
+            <!-- 外部リンクボタン群（本物の現地写真ボタン付き） -->
+            <div class="px-4 pb-4 pt-1 grid grid-cols-2 gap-1.5">
+              <a href="${realPhotoUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="col-span-2 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold py-2 px-3 rounded-lg text-center transition shadow-sm">
+                📷 本物の現地写真を見る <span class="ko-inline">/ 실제 사진 보기</span> ↗
+              </a>
+              <a href="${item.mapUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="bg-blue-600 hover:bg-blue-700 text-white text-[11px] font-bold py-2 px-2 rounded-lg text-center transition">
                 📍 Googleマップ <span class="ko-inline">/ 지도</span> ↗
               </a>
-              <a href="${item.webUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="flex-1 bg-stone-700 hover:bg-stone-800 text-white text-[11px] font-bold py-2 px-2 rounded-lg text-center transition">
+              <a href="${item.webUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="bg-stone-700 hover:bg-stone-800 text-white text-[11px] font-bold py-2 px-2 rounded-lg text-center transition">
                 🌐 公式サイト <span class="ko-inline">/ 공식웹</span> ↗
               </a>
-              ${koyoBtn}
+              ${koyoBtn ? `<div class="col-span-2 flex flex-col">${koyoBtn}</div>` : ''}
             </div>
           </div>
         `;
