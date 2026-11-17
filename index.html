@@ -563,7 +563,7 @@
         photoQuery: "太郎坊宮 夫婦岩",
         webUrl: "https://tarobo.sakura.ne.jp/",
         koyoUrl: "",
-        photo: { file: "Aga-Shrine（Tarobogu）-Meoto-Rock01.jpg", author: "Naokijp", license: "CC BY-SA 4.0" }
+        photo: { src: "img/tarobogu.jpg", author: "Toshi", own: true }
       },
       {
         id: "eigenjidam", cat: "spot",
@@ -800,7 +800,7 @@
         photoQuery: "クラブハリエ 八日市の杜",
         webUrl: "",
         koyoUrl: "",
-        photo: { file: "Club-Harie-Baumkuchen---2025-02-21 006.jpg", author: "RuinDig/Yuki Uchida", license: "CC BY 4.0", note: { ja: "イメージ（クラブハリエのバームクーヘン）", ko: "이미지 (클럽하리에 바움쿠헨)" } }
+        photo: { src: "img/yokaichi-no-mori.jpg", author: "Toshi", own: true }
       },
       {
         id: "happunoyu", cat: "onsen",
@@ -915,7 +915,7 @@
           <img src="${photoSrc(f)}" alt="${name}" loading="lazy" class="w-full aspect-[16/10] object-cover rounded-t-2xl bg-[#EAE6DF]" style="object-position:${f.pos || "50% 50%"}"
                onerror="this.parentElement.outerHTML='<div class=&quot;photo-fallback -mx-5 -mt-5 mb-4 rounded-t-2xl h-24&quot;></div>'">
           <figcaption class="px-5 pt-1 text-[10px] text-[#8A857D] text-right">
-            ${item.photo.note ? item.photo.note[currentLang] + " ・ " : ""}${t.photoBy}: <a href="${photoPage(f)}" target="_blank" rel="noopener noreferrer" class="underline">${item.photo.author} / ${item.photo.license}</a>
+            ${f.own ? `${t.photoBy}: ${f.author}` : `${f.note ? f.note[currentLang] + " ・ " : ""}${t.photoBy}: <a href="${photoPage(f)}" target="_blank" rel="noopener noreferrer" class="underline">${f.author} / ${f.license}</a>`}
           </figcaption>
         </figure>`;
     }
@@ -970,7 +970,7 @@
     }
 
     function renderCredits() {
-      document.getElementById("creditList").innerHTML = items.filter(i => i.photo).map(i =>
+      document.getElementById("creditList").innerHTML = items.filter(i => i.photo && !i.photo.own).map(i =>
         `<li>${i.ja.name}${i.photo.note ? "（" + i.photo.note.ja + "）" : ""}：<a href="${photoPage(i.photo)}" target="_blank" rel="noopener noreferrer" class="underline">${i.photo.author}</a>（${i.photo.license}）</li>`
       ).join("");
     }
