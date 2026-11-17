@@ -37,11 +37,11 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
       <div>
         <div class="font-serif-en text-xs tracking-[0.18em] text-[#9A2B17] font-bold">2026.11.17 TUE</div>
-        <h1 id="headerTitle" class="text-base sm:text-xl font-bold text-[#1A1918] leading-tight">滋賀・湖東 紅葉ドライブしおり</h1>
+        <h1 id="headerTitle" class="text-[15px] sm:text-xl font-bold text-[#1A1918] leading-tight whitespace-nowrap">滋賀・湖東 紅葉ドライブしおり</h1>
       </div>
-      <button onclick="toggleLanguage()" class="flex items-center gap-1.5 px-4 py-2 rounded-full border border-[#1A1918] bg-white hover:bg-[#1A1918] hover:text-white transition text-xs sm:text-sm font-bold shadow-sm shrink-0">
+      <button onclick="toggleLanguage()" class="flex items-center gap-1 px-3 sm:px-4 py-2 rounded-full border border-[#1A1918] bg-white hover:bg-[#1A1918] hover:text-white transition text-xs sm:text-sm font-bold shadow-sm shrink-0">
         <span>🌐</span>
-        <span id="langBtnText">한국어로 보기</span>
+        <span id="langBtnText">한국어</span>
       </button>
     </div>
   </header>
@@ -158,7 +158,7 @@
       <h2 id="srcTitle" class="text-sm font-bold text-[#1A1918]">ℹ️ 情報の出どころ（2026/11/17 確認）</h2>
       <p id="srcBody"></p>
       <div>
-        <div id="creditTitle" class="font-bold text-[#1A1918] mb-1">📷 写真（Wikimedia Commons）</div>
+        <div id="creditTitle" class="font-bold text-[#1A1918] mb-1">📷 写真のクレジット</div>
         <ul id="creditList" class="space-y-0.5"></ul>
       </div>
     </section>
@@ -192,14 +192,14 @@
     let expandedIds = new Set();
 
     const mapUrl = q => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
-    const photoSrc = f => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(f)}?width=800`;
-    const photoPage = f => `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(f.replace(/ /g, "_"))}`;
+    const photoSrc = ph => ph.src || `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(ph.file)}?width=800`;
+    const photoPage = ph => ph.page || `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(ph.file.replace(/ /g, "_"))}`;
     const imageSearch = q => `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(q)}`;
 
     const uiText = {
       ja: {
         headerTitle: "滋賀・湖東 紅葉ドライブしおり",
-        langBtnText: "한국어로 보기",
+        langBtnText: "한국어",
         labelMembers: "メンバー / 車",
         subCar: "Tappeiちゃん号（寝屋川 ⇄ 烏丸御池 ⇄ 滋賀）",
         labelTime: "集合・帰着予定",
@@ -255,11 +255,11 @@
         noPhoto: "写真なし",
         srcTitle: "ℹ️ 情報の出どころ（2026/11/17 確認）",
         srcBody: "ライトアップ・営業時間は、各寺院・施設の公式サイト、ウォーカープラス紅葉特集（教林坊 2026年版）、tenki.jp、ウェザーニュース、ぐるたび（岡喜本店・毛利志満の店舗確認済み情報）などで確認しました。「掲載情報」と書いた項目は公式で確認できなかったものです。変更もあるので、気になる所は電話で確認してください。",
-        creditTitle: "📷 写真（Wikimedia Commons・各ライセンスに従って掲載）"
+        creditTitle: "📷 写真のクレジット（Wikimedia Commons・Flickr。各ライセンスに従って掲載）"
       },
       ko: {
         headerTitle: "시가·고토 단풍 드라이브 가이드",
-        langBtnText: "日本語で見る",
+        langBtnText: "日本語",
         labelMembers: "멤버 / 차량",
         subCar: "탓페이짱 차 (네야가와 ⇄ 가라스마오이케 ⇄ 시가)",
         labelTime: "집합·귀가 예정",
@@ -315,7 +315,7 @@
         noPhoto: "사진 없음",
         srcTitle: "ℹ️ 정보 출처 (2026/11/17 확인)",
         srcBody: "라이트업·영업시간은 각 사찰·시설 공식 사이트, 워커플러스 단풍 특집(교린보 2026년판), tenki.jp, 웨더뉴스, 구루타비(오카키 본점·모리시마 점포 확인 정보) 등으로 확인했습니다. '게재 정보'라고 적힌 항목은 공식 확인이 안 된 것입니다. 변경될 수 있으니 중요한 곳은 전화로 확인하세요.",
-        creditTitle: "📷 사진 (Wikimedia Commons · 각 라이선스에 따라 게재)"
+        creditTitle: "📷 사진 출처 (Wikimedia Commons · Flickr, 각 라이선스에 따라 게재)"
       }
     };
 
@@ -694,7 +694,7 @@
         photoQuery: "岡喜本店 近江牛",
         webUrl: "https://www.okakihonten.jp/honten/",
         koyoUrl: "",
-        photo: { file: "近江牛.jpg", author: "Syced", license: "CC0", note: { ja: "イメージ（近江牛）", ko: "이미지 (오미규)" } }
+        photo: { src: "https://live.staticflickr.com/1323/835910854_4da46dc429_b.jpg", page: "https://www.flickr.com/photos/94637630@N00/835910854", author: "rhosoi", license: "CC BY 2.0", note: { ja: "イメージ（近江牛のステーキ）", ko: "이미지 (오미규 스테이크)" } }
       },
       {
         id: "morishima", cat: "food",
@@ -721,7 +721,7 @@
         photoQuery: "毛利志満 近江八幡本店",
         webUrl: "https://www.oumi-usi.co.jp/",
         koyoUrl: "",
-        photo: { file: "近江牛.jpg", author: "Syced", license: "CC0", note: { ja: "イメージ（近江牛）", ko: "이미지 (오미규)" } }
+        photo: { src: "https://live.staticflickr.com/7198/6856913491_e4c1536bbd_b.jpg", page: "https://www.flickr.com/photos/94637630@N00/6856913491", author: "rhosoi", license: "CC BY 2.0", note: { ja: "イメージ（近江牛のステーキ）", ko: "이미지 (오미규 스테이크)" } }
       },
       {
         id: "ikedafarm", cat: "food",
@@ -747,7 +747,7 @@
         photoQuery: "池田牧場 香想 ジェラート",
         webUrl: "",
         koyoUrl: "",
-        photo: null
+        photo: { src: "https://live.staticflickr.com/248/456343218_c255dccf44.jpg", page: "https://www.flickr.com/photos/94637630@N00/456343218", author: "rhosoi", license: "CC BY 2.0", note: { ja: "池田牧場のジェラート", ko: "이케다 목장 젤라또" } }
       },
       {
         id: "hitomiwinery", cat: "food",
@@ -909,7 +909,7 @@
       if (!item.photo) {
         return `<div class="photo-fallback -mx-5 -mt-5 mb-4 rounded-t-2xl h-24 flex items-center justify-center text-4xl">${item[currentLang].tag.split(" ")[0]}</div>`;
       }
-      const f = item.photo.file;
+      const f = item.photo;
       return `
         <figure class="-mx-5 -mt-5 mb-4">
           <img src="${photoSrc(f)}" alt="${name}" loading="lazy" class="w-full aspect-[16/10] object-cover rounded-t-2xl bg-[#EAE6DF]"
@@ -971,7 +971,7 @@
 
     function renderCredits() {
       document.getElementById("creditList").innerHTML = items.filter(i => i.photo).map(i =>
-        `<li>${i.ja.name}${i.photo.note ? "（" + i.photo.note.ja + "）" : ""}：<a href="${photoPage(i.photo.file)}" target="_blank" rel="noopener noreferrer" class="underline">${i.photo.author}</a>（${i.photo.license}）</li>`
+        `<li>${i.ja.name}${i.photo.note ? "（" + i.photo.note.ja + "）" : ""}：<a href="${photoPage(i.photo)}" target="_blank" rel="noopener noreferrer" class="underline">${i.photo.author}</a>（${i.photo.license}）</li>`
       ).join("");
     }
 
