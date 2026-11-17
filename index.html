@@ -3,738 +3,827 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SHIGA AUTUMN DRIVE — 11.17 Travel Guide</title>
+  <title>11/17 滋賀・湖東 紅葉ドライブしおり</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg-base: #F9F8F6;
-      --bg-card: #FFFFFF;
-      --bg-subtle: #F2EFE9;
-      --text-main: #1C1B1A;
-      --text-muted: #68645E;
-      --border-hairline: #E2DDD5;
-      --accent-momiji: #8C2D19;
-      --accent-momiji-light: #F7ECE9;
-    }
     body {
       font-family: 'Noto Sans JP', 'Noto Sans KR', sans-serif;
-      background-color: var(--bg-base);
-      color: var(--text-main);
+      background-color: #F7F5F2;
+      color: #1A1918;
       -webkit-font-smoothing: antialiased;
-      letter-spacing: 0.02em;
     }
     .font-serif-en {
       font-family: 'Cormorant Garamond', Georgia, serif;
     }
-    .ko-text {
-      font-family: 'Noto Sans KR', sans-serif;
-      display: none;
-    }
-    body.show-ko .ko-text {
-      display: block;
-    }
-    body.show-ko .ko-inline {
-      display: inline;
-    }
-    .ko-inline {
-      font-family: 'Noto Sans KR', sans-serif;
-      display: none;
-    }
-    .hairline-border {
-      border-color: var(--border-hairline);
-    }
-    .plan-tab-active {
-      background-color: var(--text-main);
+    .tab-active {
+      background-color: #1A1918;
       color: #FFFFFF;
-      border-color: var(--text-main);
+      border-color: #1A1918;
     }
-    .plan-tab-inactive {
-      background-color: transparent;
-      color: var(--text-muted);
-      border-color: var(--border-hairline);
-    }
-    .plan-tab-inactive:hover {
-      border-color: var(--text-main);
-      color: var(--text-main);
+    .tab-inactive {
+      background-color: #FFFFFF;
+      color: #57534E;
+      border-color: #D6D1C9;
     }
     .card-selected {
-      border-color: var(--accent-momiji) !important;
-      background-color: #FFFDFC !important;
+      border-color: #9A2B17 !important;
+      background-color: #FFFDFB !important;
+      box-shadow: 0 4px 16px rgba(154, 43, 23, 0.12) !important;
     }
-    /* カスタムスクロールバー非表示（カテゴリータブ用） */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
-<body class="pb-28 show-ko">
+<body class="pb-28">
 
-  <!-- ミニマル・エディトリアルヘッダー -->
-  <header class="sticky top-0 z-40 bg-[#F9F8F6]/90 backdrop-blur-md border-b hairline-border">
-    <div class="max-w-5xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
-      <div class="flex items-baseline gap-3">
-        <span class="font-serif-en text-lg sm:text-xl font-semibold tracking-widest uppercase text-[#1C1B1A]">
-          KOTO SHIGA
-        </span>
-        <span class="text-[11px] text-[#68645E] tracking-widest uppercase hidden sm:inline">
-          Autumn Drive Guide — 2026.11.17
-        </span>
+  <!-- ヘッダー -->
+  <header class="sticky top-0 z-40 bg-[#F7F5F2]/95 backdrop-blur-md border-b border-[#DFDBD2]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div>
+        <div class="font-serif-en text-xs tracking-[0.18em] text-[#9A2B17] font-bold">2026.11.17 TUE</div>
+        <h1 id="headerTitle" class="text-base sm:text-xl font-bold text-[#1A1918] leading-tight">
+          滋賀・湖東 紅葉ドライブしおり
+        </h1>
       </div>
 
-      <div class="flex items-center gap-3">
-        <button id="langToggle" onclick="toggleKorean()" class="text-xs tracking-wider px-3.5 py-1.5 rounded-full border hairline-border bg-white hover:border-[#1C1B1A] transition text-[#1C1B1A] font-medium">
-          <span id="langToggleLabel">한국어 OFF</span>
-        </button>
-      </div>
+      <!-- 言語完全切り替えボタン -->
+      <button onclick="toggleLanguage()" class="flex items-center gap-1.5 px-4 py-2 rounded-full border border-[#1A1918] bg-white hover:bg-[#1A1918] hover:text-white transition text-xs sm:text-sm font-bold shadow-sm shrink-0">
+        <span>🌐</span>
+        <span id="langBtnText">한국어로 보기</span>
+      </button>
     </div>
   </header>
 
-  <!-- ヒーローセクション（余白とタイポグラフィ主体のホテルガイド風） -->
-  <section class="border-b hairline-border bg-white">
-    <div class="max-w-5xl mx-auto px-5 sm:px-8 py-10 sm:py-14">
-      <div class="max-w-2xl space-y-4">
-        <p class="font-serif-en text-sm sm:text-base tracking-[0.2em] uppercase text-[#8C2D19] font-semibold">
-          Curated Route &amp; Spots — November 17, 2026
-        </p>
-        <h1 class="text-2xl sm:text-4xl font-light tracking-wide text-[#1C1B1A] leading-snug">
-          滋賀・湖東 紅葉ドライブのしおり
-        </h1>
-        <p class="ko-text text-sm sm:text-base font-normal text-[#68645E] tracking-normal">
-          시가·고토 단풍 드라이브 여행 가이드 — 차로만 닿을 수 있는 깊고 고요한 가을 명소
-        </p>
-        <p class="text-xs sm:text-sm text-[#68645E] leading-relaxed pt-1 font-light">
-          電車や頻繁な路線バスではアクセスしづらい山麓の古刹、牧場、老舗の近江牛レストランを厳選。車移動だからこそ巡れる1日のルートプランと現地情報。
-        </p>
-      </div>
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-6 space-y-8">
 
-      <!-- メタ情報グリッド -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10 pt-8 border-t hairline-border text-xs">
-        <div>
-          <span class="font-serif-en uppercase tracking-widest text-[#68645E] block mb-1">Travelers</span>
-          <span class="text-sm font-medium text-[#1C1B1A]">Tappeiちゃん / タロちゃん / Toshi</span>
-          <span class="block text-[#68645E] mt-0.5">Car: Tappeiちゃん号（寝屋川 ⇄ 京都 ⇄ 滋賀）</span>
+    <!-- 基本情報＆紅葉状況一括リンク -->
+    <section class="bg-white rounded-2xl border border-[#DFDBD2] p-5 sm:p-6 shadow-sm space-y-5">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+        <div class="bg-[#F7F5F2] p-4 rounded-xl">
+          <div id="labelMembers" class="text-xs font-bold text-[#68645E] mb-1">メンバー / 車</div>
+          <div class="font-bold text-base text-[#1A1918]">Tappeiちゃん・タロちゃん・Toshi</div>
+          <div id="subCar" class="text-xs text-[#57534E] mt-1">Tappeiちゃん号（寝屋川 ⇄ 烏丸御池 ⇄ 滋賀）</div>
         </div>
-        <div>
-          <span class="font-serif-en uppercase tracking-widest text-[#68645E] block mb-1">Departure &amp; Return</span>
-          <span class="text-sm font-medium text-[#1C1B1A]">12:00 烏丸御池 出発 — 21:45頃 帰着</span>
-          <a href="https://www.google.com/maps/search/?api=1&query=烏丸御池駅" target="_blank" rel="noopener noreferrer" class="inline-block text-[#8C2D19] underline underline-offset-4 mt-0.5 hover:opacity-75">
-            Google Maps: 烏丸御池駅 <span class="ko-inline">/ 가라스마오이케역</span> ↗
+        <div class="bg-[#F7F5F2] p-4 rounded-xl">
+          <div id="labelTime" class="text-xs font-bold text-[#68645E] mb-1">集合・帰着予定</div>
+          <div id="valTime" class="font-bold text-base text-[#1A1918]">12:00 烏丸御池 出発 → 21:45頃 帰着</div>
+          <a href="https://www.google.com/maps/search/?api=1&query=烏丸御池駅" target="_blank" rel="noopener noreferrer" class="inline-block mt-1.5 text-xs font-bold text-[#9A2B17] underline underline-offset-4">
+            <span id="linkStation">📍 烏丸御池駅のマップを開く ↗</span>
           </a>
         </div>
-        <div>
-          <span class="font-serif-en uppercase tracking-widest text-[#68645E] block mb-1">Live Foliage Status</span>
-          <div class="flex flex-wrap gap-x-4 gap-y-1 mt-1">
-            <a href="https://weathernews.jp/koyo/area/shiga/" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-[#1C1B1A] underline underline-offset-4 hover:text-[#8C2D19]">
-              ウェザーニュース紅葉 <span class="ko-inline">(웨더뉴스)</span> ↗
-            </a>
-            <a href="https://www.biwako-visitors.jp/season/autumn/" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-[#1C1B1A] underline underline-offset-4 hover:text-[#8C2D19]">
-              びわ湖観光公式 <span class="ko-inline">(비와호 공식)</span> ↗
-            </a>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
 
-  <main class="max-w-5xl mx-auto px-5 sm:px-8 py-10 sm:py-12 space-y-14">
-
-    <!-- 重要ノート：火曜日のライトアップ時間制限 -->
-    <section class="bg-[#F2EFE9] border hairline-border p-6 sm:p-8">
-      <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
-        <div class="space-y-2.5 max-w-2xl">
-          <div class="flex items-center gap-2.5">
-            <span class="w-2 h-2 rounded-full bg-[#8C2D19]"></span>
-            <span class="font-serif-en text-xs uppercase tracking-[0.2em] text-[#8C2D19] font-bold">Important Schedule Note</span>
-          </div>
-          <h2 class="text-lg sm:text-xl font-medium text-[#1C1B1A]">
-            火曜日のライトアップ時間制限と移動順序
-          </h2>
-          <p class="ko-text text-xs sm:text-sm text-[#68645E]">
-            화요일(평일) 야간 라이트업 운영 시간 제한 및 필수 이동 순서 안내
-          </p>
-          <p class="text-xs sm:text-sm text-[#4A4743] leading-relaxed font-light">
-            11月17日（火）は平日のため、<strong>永源寺が18:30閉門</strong>（金土日祝より1時間半早い）となります。2ヶ所ともライトアップを鑑賞する場合は、車で約35〜40分の移動時間を考慮し、<strong>「16:00頃に永源寺へ入り、17:00の点灯を見て17:45出発 → 18:20頃に教林坊到着」</strong>の順序が必須です。
-          </p>
-          <p class="ko-text text-xs text-[#68645E] leading-relaxed">
-            화요일은 평일이라 에이겐지가 18:30에 조기 폐문합니다. 두 곳 모두 야간 라이트업을 보려면 반드시 '16:00 에이겐지 입장 → 17:45 출발 → 18:20 교린보 도착' 순서로 이동해야 합니다.
-          </p>
-        </div>
-
-        <div class="shrink-0 bg-white border hairline-border p-4 sm:w-72 space-y-3 text-xs">
-          <div class="pb-2.5 border-b hairline-border">
-            <div class="text-[#68645E] text-[11px]">01. 大本山 永源寺 / 에이겐지</div>
-            <div class="font-medium text-sm text-[#1C1B1A] mt-0.5">17:00 — 18:30 閉門</div>
-          </div>
-          <div class="pb-2.5 border-b hairline-border">
-            <div class="text-[#68645E] text-[11px]">02. 石の寺 教林坊 / 교린보</div>
-            <div class="font-medium text-sm text-[#1C1B1A] mt-0.5">17:30 — 19:30（19:00最終受付）</div>
-          </div>
-          <a href="https://www.google.com/maps/dir/?api=1&origin=永源寺&destination=教林坊&travelmode=driving" target="_blank" rel="noopener noreferrer" class="block w-full text-center py-2 border border-[#1C1B1A] text-[#1C1B1A] hover:bg-[#1C1B1A] hover:text-white transition font-medium">
-            2寺間の車ルート（約35分）↗
+      <!-- リアルタイム紅葉状況ボタン -->
+      <div class="pt-2 border-t border-[#EAE6DF]">
+        <div id="labelKoyoAll" class="text-xs font-bold text-[#68645E] mb-2.5">🍁 滋賀県の最新紅葉色づき状況（一括チェック）</div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <a href="https://weathernews.jp/koyo/area/shiga/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#9A2B17] hover:bg-[#7D2211] text-white text-sm font-bold transition shadow-sm">
+            <span id="btnWeather">☀️ ウェザーニュース紅葉情報 ↗</span>
+          </a>
+          <a href="https://www.biwako-visitors.jp/season/autumn/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#3D3A36] hover:bg-[#1A1918] text-white text-sm font-bold transition shadow-sm">
+            <span id="btnBiwako">🦌 びわ湖観光公式・紅葉特集 ↗</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- セクション1：タイムライン・モデルコース -->
-    <section class="space-y-6">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b hairline-border pb-4">
-        <div>
-          <span class="font-serif-en text-xs uppercase tracking-[0.2em] text-[#68645E] block mb-1">01 / Itinerary Options</span>
-          <h2 class="text-xl sm:text-2xl font-light text-[#1C1B1A]">選べる3つのモデルコース</h2>
-          <p class="ko-text text-xs text-[#68645E] mt-0.5">선택 가능한 3가지 추천 드라이브 타임라인</p>
-        </div>
+    <!-- 最重要：火曜日のライトアップ時間制限 -->
+    <section class="bg-[#FDF6F0] border-2 border-[#D9825B] rounded-2xl p-5 sm:p-6 space-y-4">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">⚠️</span>
+        <h2 id="alertTitle" class="text-base sm:text-lg font-bold text-[#7C2312]">
+          【最重要】火曜日のライトアップ時間制限に注意
+        </h2>
+      </div>
 
-        <div class="flex gap-2">
-          <button onclick="selectPlan('A')" id="btnPlanA" class="plan-tab-active border px-4 py-2 text-xs tracking-wider transition">
-            PLAN A <span class="hidden sm:inline">/ 両方ライトアップ</span>
-          </button>
-          <button onclick="selectPlan('B')" id="btnPlanB" class="plan-tab-inactive border px-4 py-2 text-xs tracking-wider transition">
-            PLAN B <span class="hidden sm:inline">/ 昼＋夜＆温泉</span>
-          </button>
-          <button onclick="selectPlan('C')" id="btnPlanC" class="plan-tab-inactive border px-4 py-2 text-xs tracking-wider transition">
-            PLAN C <span class="hidden sm:inline">/ 冬桜×湖東三山</span>
-          </button>
+      <p id="alertDesc" class="text-sm text-[#3A2E2A] leading-relaxed">
+        11/17(火)は平日のため、<strong>永源寺が18:30閉門</strong>と早めです（金土日祝より1時間半早い）。2ヶ所とも夜に見る場合は、車移動（約35〜40分）を考慮し<strong>「16:00永源寺 → 17:45出発 → 18:20教林坊」</strong>の順番が必須です。
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+        <div class="bg-white p-3.5 rounded-xl border border-[#E8C5B0]">
+          <div id="lu1Name" class="text-xs font-bold text-[#9A2B17]">① 大本山 永源寺</div>
+          <div id="lu1Time" class="font-bold text-base text-[#1A1918] mt-0.5">17:00 〜 18:30 閉門</div>
+        </div>
+        <div class="bg-white p-3.5 rounded-xl border border-[#E8C5B0]">
+          <div id="lu2Name" class="text-xs font-bold text-[#9A2B17]">② 石の寺 教林坊</div>
+          <div id="lu2Time" class="font-bold text-base text-[#1A1918] mt-0.5">17:30 〜 19:30（19:00受付終了）</div>
         </div>
       </div>
 
-      <div id="planContent" class="bg-white border hairline-border p-6 sm:p-8">
-        <!-- JSで描画 -->
+      <a href="https://www.google.com/maps/dir/?api=1&origin=永源寺&destination=教林坊&travelmode=driving" target="_blank" rel="noopener noreferrer" class="block w-full text-center py-3 px-4 rounded-xl bg-white border border-[#9A2B17] text-[#9A2B17] hover:bg-[#9A2B17] hover:text-white text-sm font-bold transition">
+        <span id="btnRoute2">🚗 永源寺 → 教林坊の車ルートを見る（約35分）↗</span>
+      </a>
+    </section>
+
+    <!-- セクション1：3つのモデルコース -->
+    <section class="space-y-4">
+      <div>
+        <h2 id="sec1Title" class="text-lg sm:text-xl font-bold text-[#1A1918]">🗺️ 選べる3つのモデルコース</h2>
+        <p id="sec1Sub" class="text-xs sm:text-sm text-[#68645E] mt-0.5">タップしてタイムスケジュールを切り替え</p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-2">
+        <button onclick="selectPlan('A')" id="btnPlanA" class="tab-active border rounded-xl py-3 px-2 text-xs sm:text-sm font-bold transition text-center">
+          PLAN A<br><span id="tabPlanASub" class="text-[11px] font-normal">両方ライトアップ</span>
+        </button>
+        <button onclick="selectPlan('B')" id="btnPlanB" class="tab-inactive border rounded-xl py-3 px-2 text-xs sm:text-sm font-bold transition text-center">
+          PLAN B<br><span id="tabPlanBSub" class="text-[11px] font-normal">昼＋夜＆温泉</span>
+        </button>
+        <button onclick="selectPlan('C')" id="btnPlanC" class="tab-inactive border rounded-xl py-3 px-2 text-xs sm:text-sm font-bold transition text-center">
+          PLAN C<br><span id="tabPlanCSub" class="text-[11px] font-normal">冬桜×湖東三山</span>
+        </button>
+      </div>
+
+      <div id="planContent" class="bg-white rounded-2xl border border-[#DFDBD2] p-5 sm:p-6 shadow-sm">
+        <!-- JS描画 -->
       </div>
     </section>
 
-    <!-- セクション2：厳選スポット＆グルメ一覧 -->
-    <section class="space-y-6">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b hairline-border pb-4">
-        <div>
-          <span class="font-serif-en text-xs uppercase tracking-[0.2em] text-[#68645E] block mb-1">02 / Curated Directory</span>
-          <h2 class="text-xl sm:text-2xl font-light text-[#1C1B1A]">車必須の厳選スポット＆グルメ（全18選）</h2>
-          <p class="ko-text text-xs text-[#68645E] mt-0.5">대중교통으로 가기 힘든 엄선 명소 & 맛집 18선 (실제 사진·지도·공식웹·단풍현황 링크 완비)</p>
-        </div>
-
-        <!-- カテゴリーフィルター -->
-        <div class="flex gap-2 overflow-x-auto no-scrollbar pb-1">
-          <button onclick="filterCategory('all')" id="catAll" class="cat-btn bg-[#1C1B1A] text-white text-xs px-3.5 py-1.5 border border-[#1C1B1A] shrink-0 transition">
-            ALL (18)
-          </button>
-          <button onclick="filterCategory('main')" id="catMain" class="cat-btn bg-white text-[#68645E] hover:text-[#1C1B1A] text-xs px-3.5 py-1.5 border hairline-border shrink-0 transition">
-            ライトアップ (2)
-          </button>
-          <button onclick="filterCategory('spot')" id="catSpot" class="cat-btn bg-white text-[#68645E] hover:text-[#1C1B1A] text-xs px-3.5 py-1.5 border hairline-border shrink-0 transition">
-            紅葉・絶景 (9)
-          </button>
-          <button onclick="filterCategory('food')" id="catFood" class="cat-btn bg-white text-[#68645E] hover:text-[#1C1B1A] text-xs px-3.5 py-1.5 border hairline-border shrink-0 transition">
-            グルメ・カフェ (6)
-          </button>
-          <button onclick="filterCategory('onsen')" id="catOnsen" class="cat-btn bg-white text-[#68645E] hover:text-[#1C1B1A] text-xs px-3.5 py-1.5 border hairline-border shrink-0 transition">
-            温泉 (1)
-          </button>
-        </div>
+    <!-- セクション2：車必須の厳選スポット＆グルメ -->
+    <section class="space-y-4">
+      <div>
+        <h2 id="sec2Title" class="text-lg sm:text-xl font-bold text-[#1A1918]">📍 車必須の厳選スポット＆グルメ（18選）</h2>
+        <p id="sec2Sub" class="text-xs sm:text-sm text-[#68645E] mt-0.5">電車・頻繁な路線バスで行ける場所は除外済み。詳しい解説は「詳細を見る」で開閉できます。</p>
       </div>
 
-      <!-- カードグリッド -->
-      <div id="cardsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- JSでカード生成 -->
+      <!-- カテゴリーフィルター -->
+      <div class="flex gap-2 overflow-x-auto no-scrollbar pb-1">
+        <button onclick="filterCategory('all')" id="catAll" class="cat-btn bg-[#1A1918] text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-full border border-[#1A1918] shrink-0 transition">
+          すべて (18)
+        </button>
+        <button onclick="filterCategory('main')" id="catMain" class="cat-btn bg-white text-[#57534E] text-xs sm:text-sm font-bold px-4 py-2 rounded-full border border-[#D6D1C9] shrink-0 transition">
+          ✨ ライトアップ (2)
+        </button>
+        <button onclick="filterCategory('spot')" id="catSpot" class="cat-btn bg-white text-[#57534E] text-xs sm:text-sm font-bold px-4 py-2 rounded-full border border-[#D6D1C9] shrink-0 transition">
+          🍁 紅葉スポット (9)
+        </button>
+        <button onclick="filterCategory('food')" id="catFood" class="cat-btn bg-white text-[#57534E] text-xs sm:text-sm font-bold px-4 py-2 rounded-full border border-[#D6D1C9] shrink-0 transition">
+          🍖 グルメ・カフェ (6)
+        </button>
+        <button onclick="filterCategory('onsen')" id="catOnsen" class="cat-btn bg-white text-[#57534E] text-xs sm:text-sm font-bold px-4 py-2 rounded-full border border-[#D6D1C9] shrink-0 transition">
+          ♨️ 温泉 (1)
+        </button>
+      </div>
+
+      <!-- カード一覧 -->
+      <div id="cardsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- JS描画 -->
       </div>
     </section>
 
   </main>
 
-  <!-- ミニマル下部固定バー（LINE共有機能） -->
-  <footer class="fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t hairline-border py-3.5 px-5 sm:px-8 z-50">
-    <div class="max-w-5xl mx-auto flex items-center justify-between gap-4">
-      <div class="text-xs sm:text-sm text-[#68645E]">
-        <span>Selected Spots / 選択リスト：</span>
-        <strong id="selectedCount" class="font-serif-en text-lg text-[#8C2D19] mx-1">2</strong>
-        <span>places</span>
+  <!-- 下部固定バー（LINE共有） -->
+  <footer class="fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-[#DFDBD2] p-3.5 z-50 shadow-lg">
+    <div class="max-w-4xl mx-auto flex items-center justify-between gap-3">
+      <div class="text-sm font-bold text-[#1A1918]">
+        <span id="footerLabel">選択中：</span>
+        <span id="selectedCount" class="text-lg text-[#9A2B17] font-black">2</span>
+        <span id="footerUnit">件</span>
       </div>
-      <button onclick="copyForLine()" class="bg-[#1C1B1A] hover:bg-[#8C2D19] text-white text-xs tracking-wider px-5 py-2.5 transition flex items-center gap-2">
-        <span>COPY FOR LINE</span>
-        <span class="text-white/70 hidden sm:inline">/ 共有テキストをコピー</span>
+      <button onclick="copyForLine()" class="bg-[#06C755] hover:bg-[#05b34c] active:scale-95 text-white text-sm font-bold px-5 py-3 rounded-xl shadow transition flex items-center gap-2">
+        <span>💬</span>
+        <span id="btnCopyLine">LINE共有用テキストをコピー</span>
       </button>
     </div>
   </footer>
 
-  <!-- コピー完了通知 -->
-  <div id="toast" class="fixed top-20 left-1/2 -translate-x-1/2 bg-[#1C1B1A] text-white text-xs tracking-wider px-6 py-3 shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 z-50 text-center">
-    COPIED TO CLIPBOARD — LINEに貼り付けて共有できます
+  <!-- トースト通知 -->
+  <div id="toast" class="fixed top-20 left-1/2 -translate-x-1/2 bg-[#1A1918] text-white text-sm font-bold px-6 py-3.5 rounded-full shadow-xl opacity-0 pointer-events-none transition-opacity duration-300 z-50 text-center">
+    ✅ コピーしました！LINEに貼り付けてください
   </div>
 
   <script>
+    let currentLang = "ja"; // "ja" or "ko"
+    let currentPlan = "A";
+    let currentFilter = "all";
+    let selectedIds = new Set(["eigenji", "kyorinbo"]);
+    let expandedIds = new Set();
+
+    const uiText = {
+      ja: {
+        headerTitle: "滋賀・湖東 紅葉ドライブしおり",
+        langBtnText: "한국어로 보기",
+        labelMembers: "メンバー / 車",
+        subCar: "Tappeiちゃん号（寝屋川 ⇄ 烏丸御池 ⇄ 滋賀）",
+        labelTime: "集合・帰着予定",
+        valTime: "12:00 烏丸御池 出発 → 21:45頃 帰着",
+        linkStation: "📍 烏丸御池駅のマップを開く ↗",
+        labelKoyoAll: "🍁 滋賀県の最新紅葉色づき状況（一括チェック）",
+        btnWeather: "☀️ ウェザーニュース紅葉情報 ↗",
+        btnBiwako: "🦌 びわ湖観光公式・紅葉特集 ↗",
+        alertTitle: "【最重要】火曜日のライトアップ時間制限に注意",
+        alertDesc: "11/17(火)は平日のため、<strong>永源寺が18:30閉門</strong>と早めです（金土日祝より1時間半早い）。2ヶ所とも夜に見る場合は、車移動（約35〜40分）を考慮し<strong>「16:00永源寺 → 17:45出発 → 18:20教林坊」</strong>の順番が必須です。",
+        lu1Name: "① 大本山 永源寺",
+        lu1Time: "17:00 〜 18:30 閉門",
+        lu2Name: "② 石の寺 教林坊",
+        lu2Time: "17:30 〜 19:30（19:00受付終了）",
+        btnRoute2: "🚗 永源寺 → 教林坊の車ルートを見る（約35分）↗",
+        sec1Title: "🗺️ 選べる3つのモデルコース",
+        sec1Sub: "タップしてタイムスケジュールを切り替え",
+        tabPlanASub: "両方ライトアップ",
+        tabPlanBSub: "昼＋夜＆温泉",
+        tabPlanCSub: "冬桜×湖東三山",
+        sec2Title: "📍 車必須の厳選スポット＆グルメ（18選）",
+        sec2Sub: "電車・頻繁な路線バスで行ける場所は除外済み。詳しい解説は「詳細を見る」で開閉できます。",
+        catAll: "すべて (18)",
+        catMain: "✨ ライトアップ (2)",
+        catSpot: "🍁 紅葉スポット (9)",
+        catFood: "🍖 グルメ・カフェ (6)",
+        catOnsen: "♨️ 温泉 (1)",
+        footerLabel: "選択中：",
+        footerUnit: "件",
+        btnCopyLine: "LINE共有用テキストをコピー",
+        toast: "✅ コピーしました！LINEに貼り付けてください",
+        selectBtnOn: "★ 選択中",
+        selectBtnOff: "＋ 候補に追加",
+        detailOpen: "詳細・営業時間を見る ▼",
+        detailClose: "閉じる ▲",
+        btnPhoto: "📷 現地写真",
+        btnMap: "📍 マップ",
+        btnWeb: "🌐 公式サイト",
+        btnKoyo: "🍁 紅葉状況"
+      },
+      ko: {
+        headerTitle: "시가·고토 단풍 드라이브 가이드",
+        langBtnText: "日本語で見る",
+        labelMembers: "멤버 / 차량",
+        subCar: "탓페이짱 차 (네야가와 ⇄ 가라스마오이케 ⇄ 시가)",
+        labelTime: "집결 및 귀착 예정",
+        valTime: "12:00 가라스마오이케 출발 → 21:45경 귀착",
+        linkStation: "📍 가라스마오이케역 구글맵 열기 ↗",
+        labelKoyoAll: "🍁 시가현 실시간 단풍 물듦 현황 한눈에 확인",
+        btnWeather: "☀️ 웨더뉴스 단풍 현황 ↗",
+        btnBiwako: "🦌 비와호 관광 공식 단풍 특집 ↗",
+        alertTitle: "[가장 중요] 화요일 야간 라이트업 시간 제한 주의",
+        alertDesc: "11/17(화)은 평일이라 <strong>에이겐지가 18:30에 조기 폐문</strong>합니다 (주말보다 1시간 반 빠름). 두 곳 모두 야간에 보려면 차량 이동(약 35~40분)을 고려해 <strong>'16:00 에이겐지 → 17:45 출발 → 18:20 교린보'</strong> 순서로 이동해야 합니다.",
+        lu1Name: "① 다이혼잔 에이겐지 (永源寺)",
+        lu1Time: "17:00 〜 18:30 폐문",
+        lu2Name: "② 이시노데라 교린보 (教林坊)",
+        lu2Time: "17:30 〜 19:30 (19:00 입장 마감)",
+        btnRoute2: "🚗 에이겐지 → 교린보 차량 경로 보기 (약 35분) ↗",
+        sec1Title: "🗺️ 선택 가능한 3가지 추천 코스",
+        sec1Sub: "탭하여 타임스케줄 전환",
+        tabPlanASub: "야간 2곳 정복",
+        tabPlanBSub: "낮+밤 & 온천",
+        tabPlanCSub: "겨울벚꽃×단풍",
+        sec2Title: "📍 차로만 가기 좋은 엄선 명소 & 맛집 (18선)",
+        sec2Sub: "전철·버스로 쉽게 가는 곳은 제외했습니다. 자세한 설명은 '상세 보기'를 눌러 확인하세요.",
+        catAll: "전체 (18)",
+        catMain: "✨ 라이트업 (2)",
+        catSpot: "🍁 단풍 명소 (9)",
+        catFood: "🍖 맛집·카페 (6)",
+        catOnsen: "♨️ 온천 (1)",
+        footerLabel: "선택됨: ",
+        footerUnit: "곳",
+        btnCopyLine: "라인(LINE) 공유용 텍스트 복사",
+        toast: "✅ 복사 완료! 라인 채팅창에 붙여넣기 하세요",
+        selectBtnOn: "★ 선택됨",
+        selectBtnOff: "＋ 후보 추가",
+        detailOpen: "상세 설명·영업시간 보기 ▼",
+        detailClose: "접기 ▲",
+        btnPhoto: "📷 실제 사진",
+        btnMap: "📍 구글맵",
+        btnWeb: "🌐 공식 사이트",
+        btnKoyo: "🍁 단풍 현황"
+      }
+    };
+
     const plans = {
       A: {
-        code: "PLAN A",
-        title: "永源寺＆教林坊 両方ライトアップ制覇コース",
-        koTitle: "플랜 A — 에이겐지 & 교린보 야간 라이트업 2곳 모두 정복 코스",
-        desc: "16時に永源寺へ入り夕景から17:00の点灯直後を鑑賞したあと、教林坊のライトアップへハシゴする王道ルート。",
-        koDesc: "16시에 에이겐지에 입장해 석양과 17:00 점등을 본 뒤, 교린보 야간 라이트업으로 이동하는 베스트 코스.",
-        steps: [
-          { time: "12:00", place: "烏丸御池 集合・出発", koPlace: "가라스마오이케 집결 및 출발", note: "名神高速で竜王ICまたは八日市ICへ", koNote: "메이신 고속도로를 이용해 류오IC 또는 요카이치IC로 이동" },
-          { time: "13:15", place: "遅めの近江牛ランチ", koPlace: "오미규 런치 식사", note: "竜王町の「岡喜 本店」または近江八幡郊外「毛利志満 本店」", koNote: "류오초 '오카키 본점' 또는 '모리시마 본점'에서 오미규 점심" },
-          { time: "14:45", place: "昼の紅葉スポットへ", koPlace: "낮 단풍 명소 관광", note: "「百済寺」または「太郎坊宮（中腹まで車OK）」", koNote: "'백제사(햐쿠사이지)' 또는 '타로보구(차로 중턱까지 이동 가능)'" },
-          { time: "16:00", place: "大本山 永源寺（夕景〜ライトアップ）", koPlace: "에이겐지 (석양~야간 라이트업)", note: "17:00点灯直後の紅葉を見て17:45出発", koNote: "17:00 점등 직후의 환상적인 단풍 감상 후 17:45 출발" },
-          { time: "18:20", place: "石の寺 教林坊（ライトアップ）", koPlace: "교린보 (야간 라이트업)", note: "19:00最終受付。竹林と紅葉のライトアップを鑑賞", koNote: "19:00 입장 마감. 대나무숲과 붉은 단풍 라이트업 감상" },
-          { time: "19:45", place: "近江牛ディナー", koPlace: "오미규 디너 식사", note: "竜王IC近くの「焼肉 結」または「岡喜 本店」", koNote: "류오IC 근처 '야키니쿠 유이' 또는 '오카키 본점'" },
-          { time: "21:45", place: "烏丸御池 帰着・解散", koPlace: "가라스마오이케 도착 및 해산", note: "Tappeiちゃんはここから寝屋川へ帰路", koNote: "탓페이짱은 이곳에서 네야가와 본가로 귀가" }
-        ]
+        ja: {
+          title: "プランA：永源寺＆教林坊 両方ライトアップ制覇コース",
+          desc: "16時に永源寺へ入り夕景〜17:00の点灯を見たあと、教林坊のライトアップへハシゴする王道ルート。",
+          steps: [
+            { time: "12:00", place: "烏丸御池 集合・出発", note: "名神高速で竜王ICまたは八日市ICへ" },
+            { time: "13:15", place: "遅めの近江牛ランチ", note: "竜王町の「岡喜 本店」または「毛利志満 本店」" },
+            { time: "14:45", place: "昼の紅葉スポットへ", note: "「百済寺」または「太郎坊宮（中腹まで車OK）」" },
+            { time: "16:00", place: "大本山 永源寺（夕景〜ライトアップ）", note: "17:00点灯直後の紅葉を見て17:45出発" },
+            { time: "18:20", place: "石の寺 教林坊（ライトアップ）", note: "19:00最終受付。竹林と紅葉のライトアップを鑑賞" },
+            { time: "19:45", place: "近江牛ディナー", note: "竜王IC近くの「焼肉 結」または「岡喜 本店」" },
+            { time: "21:45", place: "烏丸御池 帰着・解散", note: "Tappeiちゃんはここから寝屋川へ帰路" }
+          ]
+        },
+        ko: {
+          title: "플랜 A: 에이겐지 & 교린보 야간 라이트업 2곳 모두 정복 코스",
+          desc: "16시에 에이겐지에 입장해 석양과 17:00 점등을 본 뒤, 교린보 야간 라이트업으로 이동하는 베스트 코스.",
+          steps: [
+            { time: "12:00", place: "가라스마오이케 집결 및 출발", note: "메이신 고속도로로 류오IC 또는 요카이치IC 이동" },
+            { time: "13:15", place: "오미규 런치 식사", note: "류오초 '오카키 본점' 또는 '모리시마 본점'" },
+            { time: "14:45", place: "낮 단풍 명소 관광", note: "'백제사(햐쿠사이지)' 또는 '타로보구(차로 중턱까지 이동)'" },
+            { time: "16:00", place: "에이겐지 (석양~야간 라이트업)", note: "17:00 점등 직후 단풍 감상 후 17:45 출발" },
+            { time: "18:20", place: "교린보 (야간 라이트업)", note: "19:00 입장 마감. 대나무숲과 붉은 단풍 감상" },
+            { time: "19:45", place: "오미규 디너 식사", note: "류오IC 근처 '야키니쿠 유이' 또는 '오카키 본점'" },
+            { time: "21:45", place: "가라스마오이케 도착 및 해산", note: "탓페이짱은 이곳에서 네야가와 본가로 귀가" }
+          ]
+        }
       },
       B: {
-        code: "PLAN B",
-        title: "昼の教林坊＋夜の永源寺＆八風の湯コース",
-        koTitle: "플랜 B — 낮의 교린보 + 밤의 에이겐지 & 핫푸노유 온천 코스",
-        desc: "移動を急がずゆっくり楽しみたい方向け。教林坊は昼の鮮やかな紅葉を鑑賞し、永源寺ライトアップ後にすぐ隣の天然温泉＆夕食へ。",
-        koDesc: "여유롭게 즐기고 싶은 분들을 위한 코스. 교린보는 낮에 감상하고, 에이겐지 라이트업 후 바로 옆 천연 온천과 저녁 식사로 마무리.",
-        steps: [
-          { time: "12:00", place: "烏丸御池 集合・出発", koPlace: "가라스마오이케 집결 및 출발", note: "名神高速で滋賀・竜王エリアへ", koNote: "메이신 고속도로로 시가·류오 지역 이동" },
-          { time: "13:15", place: "近江牛ランチ（岡喜 本店）", koPlace: "오미규 런치 (오카키 본점)", note: "田園地帯の牧場直営レストランでランチ", koNote: "전원 지대의 목장 직영 레스토랑에서 점심" },
-          { time: "14:45", place: "石の寺 教林坊（昼の拝観）", koPlace: "교린보 (낮 단풍 관람)", note: "明るい時間帯に苔・巨石・竹林・紅葉をじっくり鑑賞", koNote: "밝은 시간대에 이끼·거석·대나무숲·단풍을 여유롭게 감상" },
-          { time: "16:00", place: "池田牧場ジェラート or ヒトミワイナリー", koPlace: "이케다 목장 젤라또 or 히토미 와이너리", note: "永源寺周辺の車必須スポットで休憩", koNote: "에이겐지 주변 드라이브 명소에서 휴식" },
-          { time: "17:00", place: "大本山 永源寺（ライトアップ）", koPlace: "에이겐지 (야간 라이트업)", note: "18:30の閉門までゆっくり夜の紅葉を満喫", koNote: "18:30 폐문 시간까지 여유롭게 밤 단풍 만끽" },
-          { time: "18:45", place: "永源寺温泉「八風の湯」", koPlace: "에이겐지 온천 '핫푸노유'", note: "永源寺から車2分！渓谷露天風呂＆館内で近江牛すき焼き夕食", koNote: "에이겐지에서 차로 2분! 계곡 노천탕 온천욕 & 오미규 스키야키 저녁 식사" },
-          { time: "21:45", place: "烏丸御池 帰着・解散", koPlace: "가라스마오이케 도착 및 해산", note: "温泉で温まった状態で帰路へ", koNote: "온천으로 따뜻하게 몸을 녹인 후 교토로 귀가" }
-        ]
+        ja: {
+          title: "プランB：昼の教林坊＋夜の永源寺＆八風の湯コース",
+          desc: "急がずゆっくり楽しみたい方向け。教林坊は昼に鑑賞し、永源寺ライトアップ後にすぐ隣の天然温泉＆夕食へ。",
+          steps: [
+            { time: "12:00", place: "烏丸御池 集合・出発", note: "名神高速で滋賀・竜王エリアへ" },
+            { time: "13:15", place: "近江牛ランチ（岡喜 本店）", note: "田園地帯の牧場直営レストランでランチ" },
+            { time: "14:45", place: "石の寺 教林坊（昼の拝観）", note: "明るい時間帯に苔・巨石・竹林・紅葉をじっくり鑑賞" },
+            { time: "16:00", place: "池田牧場ジェラート or ヒトミワイナリー", note: "永源寺周辺の車必須スポットで休憩" },
+            { time: "17:00", place: "大本山 永源寺（ライトアップ）", note: "18:30の閉門までゆっくり夜の紅葉を満喫" },
+            { time: "18:45", place: "永源寺温泉「八風の湯」", note: "永源寺から車2分！渓谷露天風呂＆館内で近江牛すき焼き夕食" },
+            { time: "21:45", place: "烏丸御池 帰着・解散", note: "温泉で温まった状態で帰路へ" }
+          ]
+        },
+        ko: {
+          title: "플랜 B: 낮의 교린보 + 밤의 에이겐지 & 핫푸노유 온천 코스",
+          desc: "여유롭게 즐기고 싶은 분들을 위한 코스. 교린보는 낮에 감상하고, 에이겐지 라이트업 후 바로 옆 천연 온천과 저녁 식사로 마무리.",
+          steps: [
+            { time: "12:00", place: "가라스마오이케 집결 및 출발", note: "메이신 고속도로로 시가·류오 지역 이동" },
+            { time: "13:15", place: "오미규 런치 (오카키 본점)", note: "전원 지대의 목장 직영 레스토랑에서 점심" },
+            { time: "14:45", place: "교린보 (낮 단풍 관람)", note: "밝은 시간대에 이끼·거석·대나무숲·단풍 여유롭게 감상" },
+            { time: "16:00", place: "이케다 목장 젤라또 or 히토미 와이너리", note: "에이겐지 주변 드라이브 명소에서 휴식" },
+            { time: "17:00", place: "에이겐지 (야간 라이트업)", note: "18:30 폐문 시간까지 여유롭게 밤 단풍 만끽" },
+            { time: "18:45", place: "에이겐지 온천 '핫푸노유'", note: "에이겐지에서 차로 2분! 계곡 노천탕 & 오미규 저녁 식사" },
+            { time: "21:45", place: "가라스마오이케 도착 및 해산", note: "온천으로 따뜻하게 몸을 녹인 후 교토로 귀가" }
+          ]
+        }
       },
       C: {
-        code: "PLAN C",
-        title: "湖東三山（冬桜×紅葉）＆牧場・ワイナリーコース",
-        koTitle: "플랜 C — 고토산잔(겨울 벚꽃×단풍) & 목장·와이너리 드라이브 코스",
-        desc: "車がないと巡れない「湖東三山」の希少な冬桜と紅葉のコラボ＋東近江のローカルグルメを満喫するドライブプラン。",
-        koDesc: "차 없이는 돌기 힘든 '고토산잔'의 희귀한 겨울 벚꽃과 단풍 콜라보 + 목장 젤라또를 즐기는 드라이브 코스.",
-        steps: [
-          { time: "12:00", place: "烏丸御池 集合・出発", koPlace: "가라스마오이케 집결 및 출발", note: "名神高速で湖東エリアへ", koNote: "메이신 고속도로로 고토(湖東) 지역 이동" },
-          { time: "13:30", place: "西明寺 または 金剛輪寺", koPlace: "사이묘지 또는 곤고린지", note: "西明寺は天然記念物「冬桜」と紅葉が同時に咲く名所！", koNote: "사이묘지는 천연기념물 '겨울 벚꽃'과 단풍이 동시에 피는 명소!" },
-          { time: "14:45", place: "百済寺（ひゃくさいじ）", koPlace: "백제사 (햐쿠사이지)", note: "バス本数が極少の車必須古刹。巨石の石垣と琵琶湖一望の紅葉", koNote: "백제 도래인을 위해 지어진 고찰. 거석 돌담과 비와호 전망의 단풍" },
-          { time: "15:45", place: "池田牧場ジェラート「香想」", koPlace: "이케다 목장 젤라또 '카소'", note: "山あいの牧場で搾りたてミルクジェラート", koNote: "산속 목장에서 맛보는 갓 짜낸 우유 젤라또" },
-          { time: "16:30", place: "永源寺（点灯）→ 18:20 教林坊", koPlace: "에이겐지(점등) → 18:20 교린보", note: "ライトアップ2ヶ所を順番に鑑賞", koNote: "야간 라이트업 2곳을 순서대로 감상" },
-          { time: "19:45", place: "夕食 → 21:45 烏丸御池 帰着", koPlace: "저녁 식사 → 21:45 가라스마오이케 귀착", note: "竜王IC周辺で夕食後、京都へ", koNote: "류오IC 주변에서 저녁 식사 후 교토로 이동" }
-        ]
+        ja: {
+          title: "プランC：湖東三山（冬桜×紅葉）＆牧場・ワイナリーコース",
+          desc: "車がないと巡れない「湖東三山」の希少な冬桜と紅葉のコラボ＋東近江のローカルグルメを満喫するドライブプラン。",
+          steps: [
+            { time: "12:00", place: "烏丸御池 集合・出発", note: "名神高速で湖東エリアへ" },
+            { time: "13:30", place: "西明寺 または 金剛輪寺", note: "西明寺は天然記念物「冬桜」と紅葉が同時に咲く名所！" },
+            { time: "14:45", place: "百済寺（ひゃくさいじ）", note: "バス本数が極少の車必須古刹。巨石の石垣と琵琶湖一望の紅葉" },
+            { time: "15:45", place: "池田牧場ジェラート「香想」", note: "山あいの牧場で搾りたてミルクジェラート" },
+            { time: "16:30", place: "永源寺（点灯）→ 18:20 教林坊", note: "ライトアップ2ヶ所を順番に鑑賞" },
+            { time: "19:45", place: "夕食 → 21:45 烏丸御池 帰着", note: "竜王IC周辺で夕食後、京都へ" }
+          ]
+        },
+        ko: {
+          title: "플랜 C: 고토산잔(겨울 벚꽃×단풍) & 목장·와이너리 드라이브 코스",
+          desc: "차 없이는 돌기 힘든 '고토산잔'의 희귀한 겨울 벚꽃과 단풍 콜라보 + 목장 젤라또를 즐기는 드라이브 코스.",
+          steps: [
+            { time: "12:00", place: "가라스마오이케 집결 및 출발", note: "메이신 고속도로로 고토(湖東) 지역 이동" },
+            { time: "13:30", place: "사이묘지 또는 곤고린지", note: "사이묘지는 천연기념물 '겨울 벚꽃'과 단풍이 동시에 피는 명소!" },
+            { time: "14:45", place: "백제사 (햐쿠사이지)", note: "백제 도래인을 위해 지어진 고찰. 거석 돌담과 비와호 전망의 단풍" },
+            { time: "15:45", place: "이케다 목장 젤라또 '카소'", note: "산속 목장에서 맛보는 갓 짜낸 우유 젤라또" },
+            { time: "16:30", place: "에이겐지(점등) → 18:20 교린보", note: "야간 라이트업 2곳을 순서대로 감상" },
+            { time: "19:45", place: "저녁 식사 → 21:45 가라스마오이케 귀착", note: "류오IC 주변에서 저녁 식사 후 교토로 이동" }
+          ]
+        }
       }
     };
 
     const items = [
-      // 1. 主役ライトアップ（2件）
       {
-        id: "eigenji",
-        num: "01",
-        cat: "main",
-        categoryEn: "ILLUMINATION",
-        tag: "主役ライトアップ",
-        koTag: "메인 야간 라이트업",
-        name: "大本山 永源寺",
-        reading: "えいげんじ",
-        koName: "다이혼잔 에이겐지 (히가시오미시)",
-        area: "東近江市・永源寺高野町",
-        koArea: "히가시오미시 에이겐지타카노초",
-        hours: "昼 9:00〜16:00 / 夜 17:00〜18:30閉門（※火曜・平日時間）",
-        koHours: "낮 9:00~16:00 / 야간 17:00~18:30 폐문 (※화요일 평일 기준)",
-        access: "最寄駅から離れており、夜間ライトアップ時間帯の帰りのバスがないため車必須。",
-        koAccess: "역에서 멀고 야간 라이트업 시간대에는 돌아오는 버스가 없어 자동차 필수.",
-        desc: "愛知川の渓谷に佇む臨済宗永源寺派の大本山。参道の石段を覆い尽くすカエデやモミジがライトアップされ、幻想的な美しさに包まれる関西屈指の紅葉名所。",
-        koDesc: "에치가와 계곡에 자리한 단풍 명소. 돌계단을 뒤덮은 단풍나무가 조명에 비쳐 환상적인 분위기를 자아내는 간사이 대표 단풍 사찰.",
+        id: "eigenji", cat: "main",
+        ja: {
+          tag: "✨ 主役ライトアップ①",
+          name: "大本山 永源寺（えいげんじ）",
+          area: "東近江市・永源寺高野町",
+          catchCopy: "渓谷と石段を覆い尽くす関西屈指の紅葉名所。17:00点灯〜18:30閉門。",
+          hours: "昼 9:00〜16:00 / ライトアップ 17:00〜18:30閉門（※火曜・平日時間）",
+          access: "最寄駅から離れており、夜間ライトアップ時間帯の帰りのバスがないため車必須。",
+          desc: "愛知川の渓谷に佇む臨済宗永源寺派の大本山。参道の石段を覆い尽くすカエデやモミジがライトアップされ、幻想的な美しさに包まれます。"
+        },
+        ko: {
+          tag: "✨ 메인 야간 라이트업①",
+          name: "다이혼잔 에이겐지 (大本山 永源寺)",
+          area: "히가시오미시 에이겐지타카노초",
+          catchCopy: "계곡과 돌계단을 뒤덮은 간사이 대표 단풍 명소. 17:00 점등 ~ 18:30 폐문.",
+          hours: "낮 9:00~16:00 / 라이트업 17:00~18:30 폐문 (※화요일 평일 기준)",
+          access: "역에서 멀고 야간 라이트업 시간대에는 돌아오는 버스가 없어 자동차 필수.",
+          desc: "에치가와 계곡에 자리한 단풍 사찰. 돌계단을 뒤덮은 단풍나무가 조명에 비쳐 환상적인 분위기를 자아냅니다."
+        },
         photoQuery: "滋賀 永源寺 紅葉 ライトアップ",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=大本山+永源寺+滋賀",
         webUrl: "https://eigenji-t.jp/",
         koyoUrl: "https://weathernews.jp/koyo/spot/26005/"
       },
       {
-        id: "kyorinbo",
-        num: "02",
-        cat: "main",
-        categoryEn: "ILLUMINATION",
-        tag: "主役ライトアップ",
-        koTag: "메인 야간 라이트업",
-        name: "石の寺 教林坊",
-        reading: "きょうりんぼう",
-        koName: "이시노데라 교린보 (오미하치만시 아즈치)",
-        area: "近江八幡市・安土町石寺（永源寺から車約35分）",
-        koArea: "오미하치만시 아즈치초 (에이겐지에서 차로 약 35분)",
-        hours: "昼 9:30〜16:30 / 夜 17:30〜19:30（19:00最終受付）",
-        koHours: "낮 9:30~16:30 / 야간 17:30~19:30 (19:00 입장 마감)",
-        access: "山裾の集落奥にあり、夜間の公共交通機関は皆無のため車必須（無料駐車場あり）。",
-        koAccess: "산기슭 깊은 곳에 위치해 야간 대중교통이 전혀 없으므로 자동차 필수 (무료 주차장 완비).",
-        desc: "聖徳太子創建、小堀遠州作庭の名勝庭園。巨石と苔、2,000坪の竹林と約300本の真っ赤なモミジがライトアップで浮かび上がる別世界。",
-        koDesc: "거대한 바위와 푸른 이끼, 대나무숲과 약 300그루의 새빨간 단풍이 조명에 떠오르는 환상적인 정원.",
+        id: "kyorinbo", cat: "main",
+        ja: {
+          tag: "✨ 主役ライトアップ②",
+          name: "石の寺 教林坊（きょうりんぼう）",
+          area: "近江八幡市・安土町石寺（永源寺から車約35分）",
+          catchCopy: "巨石・苔・竹林と真っ赤なモミジのライトアップ。19:00最終受付。",
+          hours: "昼 9:30〜16:30 / ライトアップ 17:30〜19:30（19:00最終受付）",
+          access: "山裾の集落奥にあり、夜間の公共交通機関は皆無のため車必須（無料駐車場あり）。",
+          desc: "聖徳太子創建、小堀遠州作庭の名勝庭園。巨石と苔、2,000坪の竹林と約300本の真っ赤なモミジがライトアップで浮かび上がる別世界。"
+        },
+        ko: {
+          tag: "✨ 메인 야간 라이트업②",
+          name: "이시노데라 교린보 (石の寺 教林坊)",
+          area: "오미하치만시 아즈치초 (에이겐지에서 차로 약 35분)",
+          catchCopy: "거석·이끼·대나무숲과 붉은 단풍 라이트업. 19:00 입장 마감.",
+          hours: "낮 9:30~16:30 / 라이트업 17:30~19:30 (19:00 입장 마감)",
+          access: "산기슭 깊은 곳에 위치해 야간 대중교통이 전혀 없으므로 자동차 필수 (무료 주차장).",
+          desc: "거대한 바위와 푸른 이끼, 대나무숲과 약 300그루의 새빨간 단풍이 조명에 떠오르는 환상적인 정원입니다."
+        },
         photoQuery: "滋賀 教林坊 紅葉 ライトアップ",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=石の寺+教林坊+滋賀",
         webUrl: "https://www.biwako-visitors.jp/spot/detail/853/",
         koyoUrl: "https://weathernews.jp/koyo/spot/26014/"
       },
-
-      // 2. 車で行くべき紅葉スポット（9件）
       {
-        id: "hyakusaiji",
-        num: "03",
-        cat: "spot",
-        categoryEn: "AUTUMN FOLIAGE",
-        tag: "湖東三山・車必須",
-        koTag: "고토산잔·차량 필수",
-        name: "百済寺",
-        reading: "ひゃくさいじ",
-        koName: "백제사 / 햐쿠사이지 (히가시오미시)",
-        area: "東近江市・百済寺町（永源寺から車約15分）",
-        koArea: "히가시오미시 (에이겐지에서 차로 약 15분)",
-        hours: "8:30〜17:00（受付16:30まで）",
-        koHours: "8:30~17:00 (입장 마감 16:30)",
-        access: "最寄駅から遠く、本数の少ないコミュニティバス乗り継ぎが必要で非常にアクセスが悪いため、車で行く価値大。",
-        koAccess: "역에서 매우 멀고 배차 간격이 긴 커뮤니티 버스를 갈아타야 해서 대중교통 접근성이 극히 나쁨. 차로 가야만 편하게 갈 수 있는 곳.",
-        desc: "606年に聖徳太子が百済（백제）からの渡来人のために創建した滋賀最古級の古刹。巨石の石垣と苔むした参道、琵琶湖まで見渡す「天下遠望の名園」の紅葉が圧巻。",
-        koDesc: "606년 쇼토쿠 태자가 백제 도래인을 위해 창건한 고찰. 거대한 돌담과 이끼 낀 참배길, 비와호까지 내려다보이는 정원의 단풍이 압권.",
+        id: "hyakusaiji", cat: "spot",
+        ja: {
+          tag: "🍁 湖東三山・車必須",
+          name: "百済寺（ひゃくさいじ）",
+          area: "東近江市・百済寺町（永源寺から車約15分）",
+          catchCopy: "聖徳太子が百済(백제)からの渡来人のために創建。琵琶湖を一望する紅葉名園。",
+          hours: "8:30〜17:00（受付16:30まで）",
+          access: "最寄駅から遠く、本数の少ないコミュニティバス乗り継ぎが必要で非常にアクセスが悪いため、車で行く価値大！",
+          desc: "606年に聖徳太子が百済からの渡来人のために創建した滋賀最古級の古刹。巨石の石垣と苔むした参道、琵琶湖まで見渡す「天下遠望の名園」の紅葉が圧巻。"
+        },
+        ko: {
+          tag: "🍁 고토산잔·차량 필수",
+          name: "백제사 / 햐쿠사이지 (百済寺)",
+          area: "히가시오미시 (에이겐지에서 차로 약 15분)",
+          catchCopy: "쇼토쿠 태자가 백제 도래인을 위해 창건한 고찰. 비와호 전망의 단풍 명원.",
+          hours: "8:30~17:00 (입장 마감 16:30)",
+          access: "역에서 매우 멀고 배차 간격이 긴 커뮤니티 버스를 갈아타야 해서 대중교통 접근성이 극히 나쁨. 차로 가야 편함!",
+          desc: "606년 쇼토쿠 태자가 백제 도래인을 위해 창건한 고찰. 거대한 돌담과 이끼 낀 참배길, 비와호까지 내려다보이는 정원의 단풍이 압권입니다."
+        },
         photoQuery: "滋賀 百済寺 紅葉",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=百済寺+滋賀",
         webUrl: "http://www.hyakusaiji.jp/",
         koyoUrl: "https://weathernews.jp/koyo/spot/26003/"
       },
       {
-        id: "saimyoji",
-        num: "04",
-        cat: "spot",
-        categoryEn: "SAKURA & FOLIAGE",
-        tag: "冬桜×紅葉コラボ",
-        koTag: "겨울 벚꽃×단풍 동시 감상",
-        name: "西明寺",
-        reading: "さいみょうじ",
-        koName: "사이묘지 (고라초)",
-        area: "甲良町・池寺（金剛輪寺から車約10分）",
-        koArea: "고라초 (곤고린지에서 차로 약 10분)",
-        hours: "8:30〜17:00（受付16:30まで）",
-        koHours: "8:30~17:00 (입장 마감 16:30)",
-        access: "駅から離れた鈴鹿山麓の国道307号沿いにあり車必須（無料大型駐車場あり）。",
-        koAccess: "역에서 먼 국도 307호선 산기슭에 위치해 자동차 필수 (무료 대형 주차장 완비).",
-        desc: "国宝の本堂・三重塔と約1,000本のカエデに加え、秋〜冬に満開を迎える天然記念物「不断桜（冬桜）」があり、桜と真っ赤な紅葉の同時鑑賞ができる希少な名所。",
-        koDesc: "국보 본당·삼중탑과 1,000그루의 단풍, 그리고 가을~겨울에 만개하는 천연기념물 '후단자쿠라(겨울 벚꽃)'가 있어 벚꽃과 단풍을 동시에 볼 수 있는 명소.",
+        id: "saimyoji", cat: "spot",
+        ja: {
+          tag: "🌸 冬桜×紅葉コラボ",
+          name: "西明寺（さいみょうじ）",
+          area: "甲良町・池寺（金剛輪寺から車約10分）",
+          catchCopy: "満開の「冬桜（不断桜）」と真っ赤な紅葉が同時に咲く希少スポット！",
+          hours: "8:30〜17:00（受付16:30まで）",
+          access: "駅から離れた鈴鹿山麓の国道307号沿いにあり車必須（無料大型駐車場あり）。",
+          desc: "国宝の本堂・三重塔と約1,000本のカエデに加え、秋〜冬に満開を迎える天然記念物「不断桜（冬桜）」があり、桜と紅葉の同時鑑賞が可能。"
+        },
+        ko: {
+          tag: "🌸 겨울 벚꽃×단풍 동시 감상",
+          name: "사이묘지 (西明寺)",
+          area: "고라초 (곤고린지에서 차로 약 10분)",
+          catchCopy: "만개한 '겨울 벚꽃'과 새빨간 단풍이 동시에 피는 희귀 명소!",
+          hours: "8:30~17:00 (입장 마감 16:30)",
+          access: "역에서 먼 국도 307호선 산기슭에 위치해 자동차 필수 (무료 대형 주차장).",
+          desc: "국보 본당·삼중탑과 1,000그루의 단풍, 그리고 가을~겨울에 만개하는 천연기념물 '겨울 벚꽃'을 동시에 감상할 수 있습니다."
+        },
         photoQuery: "湖東三山 西明寺 紅葉 不断桜",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=湖東三山+西明寺+滋賀",
         webUrl: "https://www.saimyouji.com/",
         koyoUrl: "https://weathernews.jp/koyo/spot/26001/"
       },
       {
-        id: "kongorinji",
-        num: "05",
-        cat: "spot",
-        categoryEn: "AUTUMN FOLIAGE",
-        tag: "血染めのもみじ",
-        koTag: "진홍빛 단풍 터널",
-        name: "金剛輪寺",
-        reading: "こんごうりんじ",
-        koName: "곤고린지 (아이쇼초)",
-        area: "愛荘町・松尾寺（百済寺から車約12分）",
-        koArea: "아이쇼초 (백제사에서 차로 약 12분)",
-        hours: "8:30〜17:00（受付16:30まで）",
-        koHours: "8:30~17:00 (입장 마감 16:30)",
-        access: "路線バスがほとんどなく、湖東三山を巡るなら車一択。",
-        koAccess: "노선버스가 거의 없어 자동차 이동 필수.",
-        desc: "「血染めのもみじ」と呼ばれる鮮烈な深紅のカエデが有名。総門から国宝の本堂まで続く約500mの参道に、千躰地蔵尊と紅葉のトンネルが続く。",
-        koDesc: "'피로 물든 단풍'이라 불리는 강렬한 진홍빛 단풍이 유명. 국보 본당까지 이어지는 참배길에 천체지장보살과 단풍 터널이 펼쳐짐.",
+        id: "kongorinji", cat: "spot",
+        ja: {
+          tag: "🍁 血染めのもみじ",
+          name: "金剛輪寺（こんごうりんじ）",
+          area: "愛荘町・松尾寺（百済寺から車約12分）",
+          catchCopy: "「血染めのもみじ」と呼ばれる深紅の紅葉トンネルと千躰地蔵。",
+          hours: "8:30〜17:00（受付16:30まで）",
+          access: "路線バスがほとんどなく、湖東三山を巡るなら車一択。",
+          desc: "「血染めのもみじ」と呼ばれる鮮烈な深紅のカエデが有名。総門から国宝の本堂まで続く約500mの参道に、千躰地蔵尊と紅葉のトンネルが続きます。"
+        },
+        ko: {
+          tag: "🍁 진홍빛 단풍 터널",
+          name: "곤고린지 (金剛輪寺)",
+          area: "아이쇼초 (백제사에서 차로 약 12분)",
+          catchCopy: "'피로 물든 단풍'이라 불리는 진홍빛 단풍 터널과 천체지장보살.",
+          hours: "8:30~17:00 (입장 마감 16:30)",
+          access: "노선버스가 거의 없어 자동차 이동 필수.",
+          desc: "'피로 물든 단풍'이라 불리는 강렬한 진홍빛 단풍이 유명. 국보 본당까지 이어지는 참배길에 지장보살과 단풍 터널이 펼쳐집니다."
+        },
         photoQuery: "滋賀 金剛輪寺 紅葉",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=金剛輪寺+滋賀",
         webUrl: "https://kongourinji.jp/",
         koyoUrl: "https://weathernews.jp/koyo/spot/26002/"
       },
       {
-        id: "tarobogu",
-        num: "06",
-        cat: "spot",
-        categoryEn: "PANORAMA SHRINE",
-        tag: "中腹まで車で直行",
-        koTag: "차로 산 중턱까지 직행",
-        name: "太郎坊宮（阿賀神社）",
-        reading: "たろうぼうぐう",
-        koName: "타로보구 신사 (히가시오미시)",
-        area: "東近江市・小脇町",
-        koArea: "히가시오미시 코와키초",
-        hours: "参拝自由（授与所は9:00〜17:00）",
-        koHours: "참배 자유 (수여소 9:00~17:00)",
-        access: "車なしだと麓から740段以上の急な石段を登る必要があるが、車なら中腹の駐車場まで一気に上がれるため快適。",
-        koAccess: "차가 없으면 산 아래에서부터 740계단 이상의 가파른 돌계단을 걸어 올라가야 하지만, 차를 타면 중턱 주차장까지 단번에 올라갈 수 있어 매우 편리함.",
-        desc: "赤神山の中腹に鎮座する勝運の神様。巨大な夫婦岩の間を通り抜ける参道や、舞台造りの境内から紅葉と東近江の田園風景を一望できる。",
-        koDesc: "아카가미산 중턱에 자리한 승운의 신사. 거대한 부부바위 사이를 지나는 참배길과 전망대에서 단풍과 히가시오미 평야를 한눈에 조망 가능.",
+        id: "tarobogu", cat: "spot",
+        ja: {
+          tag: "⛩️ 中腹まで車で直行",
+          name: "太郎坊宮（阿賀神社）",
+          area: "東近江市・小脇町",
+          catchCopy: "徒歩だと長い石段だが、車なら中腹駐車場まで一気に上がれる絶景神社！",
+          hours: "参拝自由（授与所は9:00〜17:00）",
+          access: "車なしだと麓から740段以上の石段を登る必要があるが、車なら中腹の駐車場まで一気に上がれるため快適！",
+          desc: "赤神山の中腹に鎮座する勝運の神様。巨大な夫婦岩の間を通り抜ける参道や、舞台造りの境内から紅葉と東近江の街並みを一望できます。"
+        },
+        ko: {
+          tag: "⛩️ 차로 산 중턱까지 직행",
+          name: "타로보구 신사 (太郎坊宮)",
+          area: "히가시오미시 코와키초",
+          catchCopy: "걸어가면 긴 돌계단이지만, 차로는 중턱 주차장까지 한 번에 이동 가능!",
+          hours: "참배 자유 (수여소 9:00~17:00)",
+          access: "차가 없으면 740계단 이상의 돌계단을 올라야 하지만, 차를 타면 중턱 주차장까지 단번에 올라갈 수 있어 편리함!",
+          desc: "아카가미산 중턱에 자리한 승운의 신사. 거대한 부부바위 사이를 지나는 참배길과 전망대에서 단풍과 평야를 한눈에 조망할 수 있습니다."
+        },
         photoQuery: "滋賀 太郎坊宮 紅葉 夫婦岩",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=太郎坊宮+滋賀",
         webUrl: "http://www.tarobo.sakura.ne.jp/",
         koyoUrl: "https://www.biwako-visitors.jp/spot/detail/892/"
       },
       {
-        id: "kawarayazenji",
-        num: "07",
-        cat: "spot",
-        categoryEn: "HIDDEN TEMPLE",
-        tag: "山中の静かな穴場",
-        koTag: "산속의 조용한 숨은 단풍 명소",
-        name: "瓦屋禅寺",
-        reading: "かわらやぜんじ",
-        koName: "가와라야젠지 (히가시오미시)",
-        area: "東近江市・建部瓦屋寺町（教林坊へのルート近く）",
-        koArea: "히가시오미시 (교린보 가는 길 근처 산중)",
-        hours: "9:00〜16:00頃",
-        koHours: "9:00~16:00경",
-        access: "公共交通機関なし。山道を車で上がった先にあるため車100%必須。",
-        koAccess: "대중교통 없음. 산길을 차로 올라가야만 닿을 수 있는 완전 차량 전용 명소.",
-        desc: "聖徳太子創建と伝わる山中の禅寺。観光バスがほとんど入らない静寂の境内で、重厚な茅葺き屋根の本堂と鮮やかなモミジのコントラストを楽しめる。",
-        koDesc: "관광버스가 거의 오지 않는 고즈넉한 산속 선종 사찰. 중후한 초가지붕 본당과 선명한 단풍의 조화를 조용히 감상할 수 있음.",
+        id: "kawarayazenji", cat: "spot",
+        ja: {
+          tag: "🍁 山中の静かな穴場",
+          name: "瓦屋禅寺（かわらやぜんじ）",
+          area: "東近江市・建部瓦屋寺町（教林坊へのルート近く）",
+          catchCopy: "観光バスが来ない山中の静かな禅寺。茅葺き屋根の本堂×紅葉。",
+          hours: "9:00〜16:00頃",
+          access: "公共交通機関なし。山道を車で上がった先にあるため車100%必須。",
+          desc: "聖徳太子創建と伝わる山中の禅寺。観光バスがほとんど入らない静寂の境内で、重厚な茅葺き屋根の本堂と鮮やかなモミジを楽しめます。"
+        },
+        ko: {
+          tag: "🍁 산속의 조용한 숨은 명소",
+          name: "가와라야젠지 (瓦屋禅寺)",
+          area: "히가시오미시 (교린보 가는 길 근처 산중)",
+          catchCopy: "관광버스가 오지 않는 산속 사찰. 초가지붕 본당×단풍의 조화.",
+          hours: "9:00~16:00경",
+          access: "대중교통 없음. 산길을 차로 올라가야만 닿을 수 있는 차량 전용 명소.",
+          desc: "관광버스가 거의 오지 않는 고즈넉한 산속 선종 사찰. 중후한 초가지붕 본당과 선명한 단풍의 조화를 조용히 감상할 수 있습니다."
+        },
         photoQuery: "東近江市 瓦屋禅寺 紅葉",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=瓦屋禅寺+東近江市",
         webUrl: "https://www.kawarayazenji.com/",
         koyoUrl: "https://www.google.com/maps/search/?api=1&query=瓦屋禅寺+東近江市"
       },
       {
-        id: "eigenjidam",
-        num: "08",
-        cat: "spot",
-        categoryEn: "SCENIC DRIVE",
-        tag: "絶景紅葉ドライブウェイ",
-        koTag: "절경 단풍 드라이브 코스",
-        name: "永源寺ダム・もみじ街道",
-        reading: "国道421号",
-        koName: "에이겐지 댐·단풍 가도 (국도 421호선)",
-        area: "東近江市・永源寺相谷町（永源寺から車約5〜10分）",
-        koArea: "히가시오미시 (에이겐지에서 차로 5~10분 더 안쪽)",
-        hours: "終日通行可（夕暮れ前がおすすめ）",
-        koHours: "상시 통행 가능 (해 질 녘 이전 추천)",
-        access: "歩道やバス停のない完全な車専用ドライブコース。",
-        koAccess: "보도나 버스 정류장이 없는 완전 드라이브 전용 코스.",
-        desc: "永源寺から国道421号をさらに少し奥へ進んだ渓谷ルート。エメラルドグリーンのダム湖と周囲の山々の紅葉を車窓から楽しめる。",
-        koDesc: "에이겐지에서 국도 421호선을 따라 조금 더 들어가면 나오는 계곡 드라이브 코스. 댐 호수와 산의 단풍을 차창 밖으로 만끽 가능.",
+        id: "eigenjidam", cat: "spot",
+        ja: {
+          tag: "🚗 絶景紅葉ドライブウェイ",
+          name: "永源寺ダム・もみじ街道（国道421号）",
+          area: "東近江市・永源寺相谷町（永源寺から車約5〜10分）",
+          catchCopy: "永源寺のさらに奥。ダム湖に映る山々の紅葉を車窓から楽しむドライブ道。",
+          hours: "終日通行可（夕暮れ前がおすすめ）",
+          access: "歩道やバス停のない完全な車専用ドライブコース。",
+          desc: "永源寺から国道421号をさらに少し奥へ進んだ渓谷ルート。エメラルドグリーンのダム湖と周囲の山々の紅葉を車窓から気軽に楽しめます。"
+        },
+        ko: {
+          tag: "🚗 절경 단풍 드라이브 코스",
+          name: "에이겐지 댐·단풍 가도 (永源寺ダム)",
+          area: "히가시오미시 (에이겐지에서 차로 5~10분 더 안쪽)",
+          catchCopy: "에이겐지 안쪽의 계곡 드라이브 길. 댐 호수에 비치는 단풍 절경.",
+          hours: "상시 통행 가능 (해 질 녘 이전 추천)",
+          access: "보도나 버스 정류장이 없는 완전 드라이브 전용 코스.",
+          desc: "에이겐지에서 국도 421호선을 따라 조금 더 들어가면 나오는 계곡 드라이브 코스. 댐 호수와 산의 단풍을 차창 밖으로 만끽할 수 있습니다."
+        },
         photoQuery: "永源寺ダム 紅葉",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=永源寺ダム",
         webUrl: "https://www.biwako-visitors.jp/spot/detail/901/",
         koyoUrl: "https://www.google.com/maps/search/?api=1&query=永源寺ダム"
       },
       {
-        id: "shoboji",
-        num: "09",
-        cat: "spot",
-        categoryEn: "ZEN GARDEN",
-        tag: "隠れた名庭の紅葉",
-        koTag: "숨겨진 명정원의 단풍",
-        name: "正法寺",
-        reading: "しょうぼうじ",
-        koName: "쇼보지 (히노초)",
-        area: "日野町・鎌掛（永源寺から南へ車約20分）",
-        koArea: "히노초 카이가케 (에이겐지에서 남쪽으로 차로 약 20분)",
-        hours: "9:00〜17:00",
-        koHours: "9:00~17:00",
-        access: "駅から離れた山あいの集落にあり車が圧倒的に便利（無料駐車場あり）。",
-        koAccess: "역에서 떨어진 산간 마을에 위치해 자동차 이동이 압도적으로 편리함 (무료 주차장 완비).",
-        desc: "春の藤の寺として知られるが、秋は白砂の庭園を囲むカエデが真っ赤に染まる穴場名所。人が少なく落ち着いて写真撮影ができる。",
-        koDesc: "백사 정원을 둘러싼 단풍나무가 붉게 물드는 숨은 명소. 관광객이 적어 여유롭게 사진 촬영 가능.",
+        id: "shoboji", cat: "spot",
+        ja: {
+          tag: "🍁 隠れた名庭の紅葉",
+          name: "正法寺（しょうぼうじ）",
+          area: "日野町・鎌掛（永源寺から南へ車約20分）",
+          catchCopy: "白砂の庭園を囲む真っ赤なカエデ。人が少なく落ち着いて写真撮影できる穴場。",
+          hours: "9:00〜17:00",
+          access: "駅から離れた山あいの集落にあり車が圧倒的に便利（無料駐車場あり）。",
+          desc: "春の藤の寺として知られるが、秋は白砂の庭園を囲むカエデが真っ赤に染まる穴場名所。人が少なく落ち着いて写真撮影ができます。"
+        },
+        ko: {
+          tag: "🍁 숨겨진 명정원의 단풍",
+          name: "쇼보지 (正法寺)",
+          area: "히노초 카이가케 (에이겐지에서 남쪽으로 차로 약 20분)",
+          catchCopy: "백사 정원을 둘러싼 붉은 단풍. 관광객이 적어 여유롭게 사진 찍기 좋은 명소.",
+          hours: "9:00~17:00",
+          access: "역에서 떨어진 산간 마을에 위치해 자동차 이동이 편리 (무료 주차장).",
+          desc: "백사 정원을 둘러싼 단풍나무가 붉게 물드는 숨은 명소. 관광객이 적어 여유롭게 사진 촬영을 할 수 있습니다."
+        },
         photoQuery: "滋賀 日野町 正法寺 紅葉",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=正法寺+滋賀県日野町",
         webUrl: "https://www.biwako-visitors.jp/spot/detail/957/",
         koyoUrl: "https://www.biwako-visitors.jp/spot/detail/957/"
       },
       {
-        id: "chojuji",
-        num: "10",
-        cat: "spot",
-        categoryEn: "KONAN SANZAN",
-        tag: "湖南三山・紅葉トンネル",
-        koTag: "고난산잔·단풍 터널",
-        name: "長寿寺",
-        reading: "ちょうじゅじ",
-        koName: "조주지 (고난시)",
-        area: "湖南市・東寺（名神 栗東湖南IC・竜王IC近く）",
-        koArea: "고난시 히가시데라 (류오IC 인근)",
-        hours: "9:00〜16:00",
-        koHours: "9:00~16:00",
-        access: "駅から遠く、京都から名神高速で滋賀に入る往路の寄り道に車で行くのが最適。",
-        koAccess: "역에서 멀어 교토에서 고속도로로 시가에 진입할 때 차로 들르기 최적.",
-        desc: "国宝の本堂へと続く約200mの参道がイロハモミジのトンネルになる「湖南三山」のひとつ。往路の13時〜14時台の立ち寄りにぴったり。",
-        koDesc: "국보 본당으로 이어지는 약 200m 참배길이 단풍 터널을 이루는 '고난산잔' 중 하나. 가는 길에 들르기 좋음.",
+        id: "chojuji", cat: "spot",
+        ja: {
+          tag: "🍁 湖南三山・紅葉トンネル",
+          name: "長寿寺（ちょうじゅじ）",
+          area: "湖南市・東寺（名神 栗東湖南IC・竜王IC近く）",
+          catchCopy: "国宝本堂へ続く約200mのイロハモミジのトンネル。京都からの往路寄り道に最適。",
+          hours: "9:00〜16:00",
+          access: "駅から遠く、京都から名神高速で滋賀に入る往路の寄り道に車で行くのが最適。",
+          desc: "国宝の本堂へと続く約200mの参道がイロハモミジのトンネルになる「湖南三山」のひとつ。往路の13時〜14時台の立ち寄りにぴったりです。"
+        },
+        ko: {
+          tag: "🍁 고난산잔·단풍 터널",
+          name: "조주지 (長寿寺)",
+          area: "고난시 히가시데라 (류오IC 인근)",
+          catchCopy: "국보 본당으로 이어지는 약 200m 단풍 터널. 교토에서 가는 길에 들르기 최적.",
+          hours: "9:00~16:00",
+          access: "역에서 멀어 교토에서 고속도로로 시가에 진입할 때 차로 들르기 최적.",
+          desc: "국보 본당으로 이어지는 약 200m 참배길이 단풍 터널을 이루는 '고난산잔' 중 하나입니다."
+        },
         photoQuery: "滋賀 湖南三山 長寿寺 紅葉",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=湖南三山+長寿寺+滋賀",
         webUrl: "https://www.biwako-visitors.jp/spot/detail/773/",
         koyoUrl: "https://weathernews.jp/koyo/spot/26008/"
       },
       {
-        id: "zensuiji",
-        num: "11",
-        cat: "spot",
-        categoryEn: "KONAN SANZAN",
-        tag: "湖南三山・国宝本堂",
-        koTag: "고난산잔·국보 본당",
-        name: "善水寺・常楽寺",
-        reading: "ぜんすいじ・じょうらくじ",
-        koName: "젠스이지 & 조라쿠지 (고난시)",
-        area: "湖南市・岩根 / 西寺（長寿寺から車約10分）",
-        koArea: "고난시 (조주지에서 차로 약 10분)",
-        hours: "9:00〜16:00",
-        koHours: "9:00~16:00",
-        access: "山麓に点在しており公共交通でのハシゴは不可能。車なら10分で移動可能。",
-        koAccess: "산기슭에 흩어져 있어 대중교통으로는 이동 불가. 차로는 10분이면 이동 가능.",
-        desc: "長寿寺と並び「湖南三山」を構成する国宝寺院。善水寺は山腹の境内を彩る大モミジ、常楽寺は国宝三重塔と紅葉の調和が見事。",
-        koDesc: "조주지와 함께 '고난산잔'을 이루는 국보 사찰. 젠스이지의 거대한 단풍과 조라쿠지의 국보 삼중탑 단풍이 아름다움.",
+        id: "zensuiji", cat: "spot",
+        ja: {
+          tag: "🍁 湖南三山・国宝本堂",
+          name: "善水寺（ぜんすいじ）・常楽寺（じょうらくじ）",
+          area: "湖南市・岩根 / 西寺（長寿寺から車約10分）",
+          catchCopy: "山麓に点在する国宝寺院群。車なら10分で移動できる紅葉名所。",
+          hours: "9:00〜16:00",
+          access: "山麓に点在しており公共交通でのハシゴは不可能。車なら10分で移動可能。",
+          desc: "長寿寺と並び「湖南三山」を構成する国宝寺院。善水寺は山腹の境内を彩る大モミジ、常楽寺は国宝三重塔と紅葉の調和が見事です。"
+        },
+        ko: {
+          tag: "🍁 고난산잔·국보 본당",
+          name: "젠스이지 & 조라쿠지 (善水寺・常楽寺)",
+          area: "고난시 (조주지에서 차로 약 10분)",
+          catchCopy: "산기슭에 자리한 국보 사찰군. 차로는 10분 만에 이동 가능한 단풍 명소.",
+          hours: "9:00~16:00",
+          access: "산기슭에 흩어져 있어 대중교통으로는 이동 불가. 차로는 10분이면 이동 가능.",
+          desc: "조주지와 함께 '고난산잔'을 이루는 국보 사찰. 젠스이지의 거대한 단풍과 조라쿠지의 국보 삼중탑 단풍이 아름답습니다."
+        },
         photoQuery: "滋賀 善水寺 常楽寺 紅葉",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=善水寺+滋賀",
         webUrl: "http://www.zensuiji.jp/",
         koyoUrl: "https://weathernews.jp/koyo/spot/26009/"
       },
-
-      // 3. 車必須のグルメ・カフェ（6件）
       {
-        id: "okaki",
-        num: "12",
-        cat: "food",
-        categoryEn: "OMI BEEF DINING",
-        tag: "近江牛・火曜営業",
-        koTag: "오미규 직영점·화요일 영업",
-        name: "近江牛 岡喜 本店",
-        reading: "おかき ほんてん",
-        koName: "오미규 오카키 본점 (류오초)",
-        area: "竜王町・山之上（名神 竜王ICから車約10分）",
-        koArea: "류오초 야마노우에 (류오IC에서 차로 약 10분)",
-        hours: "昼 11:00〜15:00(LO14:30) / 夜 17:00〜21:00(LO20:00) ※火曜営業",
-        koHours: "점심 11:00~15:00(LO14:30) / 저녁 17:00~21:00(LO20:00) ※화요일 정상영업",
-        access: "田園地帯の真ん中にあり車必須（大型駐車場80台完備）。",
-        koAccess: "전원 지대 한가운데 위치해 자동차 필수 (80대 대형 주차장 완비).",
-        desc: "自社牧場直営の近江牛老舗レストラン。2,000円台の近江牛ハンバーグや牛鍋から、ステーキ重・すき焼きまで揃い、13時過ぎのランチにも帰路ディナーにも最高。",
-        koDesc: "자체 목장 직영 오미규 노포 레스토랑. 합리적인 가격의 오미규 함박스테이크와 소고기 전골부터 스테이크 덮밥·스키야키까지 점심·저녁 모두 강력 추천.",
+        id: "okaki", cat: "food",
+        ja: {
+          tag: "🍖 近江牛・火曜営業",
+          name: "近江牛 岡喜（おかき）本店",
+          area: "竜王町・山之上（名神 竜王ICから車約10分）",
+          catchCopy: "牧場直営の近江牛老舗。ハンバーグ・牛鍋・ステーキ重まで揃いランチも夜もOK！",
+          hours: "昼 11:00〜15:00(LO14:30) / 夜 17:00〜21:00(LO20:00) ※水曜定休（火曜営業）",
+          access: "田園地帯の真ん中にあり車必須（大型駐車場80台完備）。",
+          desc: "自社牧場直営の近江牛老舗レストラン。2,000円台の近江牛ハンバーグや牛鍋から、ステーキ重・すき焼きまで揃い、13時過ぎのランチにも帰路ディナーにも最高です。"
+        },
+        ko: {
+          tag: "🍖 오미규 직영점·화요일 영업",
+          name: "오미규 오카키 본점 (近江牛 岡喜本店)",
+          area: "류오초 야마노우에 (류오IC에서 차로 약 10분)",
+          catchCopy: "목장 직영 오미규 노포 맛집. 함박스테이크·전골·스테이크 덮밥 등 점심·저녁 모두 추천!",
+          hours: "점심 11:00~15:00(LO14:30) / 저녁 17:00~21:00(LO20:00) ※화요일 정상영업",
+          access: "전원 지대 한가운데 위치해 자동차 필수 (80대 대형 주차장 완비).",
+          desc: "자체 목장 직영 오미규 노포 레스토랑. 합리적인 가격의 오미규 함박스테이크와 소고기 전골부터 스테이크 덮밥·스키야키까지 즐길 수 있습니다."
+        },
         photoQuery: "竜王 近江牛 岡喜本店 料理",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=近江牛+岡喜本店+竜王",
         webUrl: "https://www.okaki.co.jp/restaurant/honten/",
         koyoUrl: ""
       },
       {
-        id: "morishima",
-        num: "13",
-        cat: "food",
-        categoryEn: "OMI BEEF DINING",
-        tag: "老舗近江牛・火曜営業",
-        koTag: "오미규 노포·화요일 영업",
-        name: "近江牛 毛利志満 近江八幡本店",
-        reading: "もりしま",
-        koName: "오미규 모리시마 오미하치만 본점",
-        area: "近江八幡市・東川町（国道8号沿い・竜王ICから車約15分）",
-        koArea: "오미하치만시 히가시가와초 (국도 8호선 변·차량 필수)",
-        hours: "昼 11:00〜15:00(LO14:00) / 夜 17:00〜20:30(LO19:30) ※火曜営業",
-        koHours: "점심 11:00~15:00(LO14:00) / 저녁 17:00~20:30(LO19:30) ※화요일 영업",
-        access: "駅から離れた国道8号沿いのロードサイド本店のため車アクセス専用。",
-        koAccess: "역에서 떨어진 국도 8호선 대로변에 위치해 차량 접근에 최적화된 본점.",
-        desc: "自社牧場で育てた極上近江牛を味わえる名店。名物の石焼やステーキ御膳、すき焼き、しゃぶしゃぶなど贅沢なランチ・ディナーに。",
-        koDesc: "직영 목장에서 기른 최상급 오미규 전문점. 명물 돌구이(이시야키), 스테이크 정식, 스키야키 등 품격 있는 식사 가능.",
+        id: "morishima", cat: "food",
+        ja: {
+          tag: "🥩 老舗近江牛・火曜営業",
+          name: "近江牛 毛利志満（もりしま）近江八幡本店",
+          area: "近江八幡市・東川町（国道8号沿い・竜王ICから車約15分）",
+          catchCopy: "自社牧場の極上近江牛。石焼・ステーキ御膳・すき焼きなど贅沢ランチ＆ディナー。",
+          hours: "昼 11:00〜15:00(LO14:00) / 夜 17:00〜20:30(LO19:30) ※水曜定休（火曜営業）",
+          access: "駅から離れた国道8号沿いのロードサイド本店のため車アクセス専用。",
+          desc: "自社牧場で育てた極上近江牛を味わえる名店。名物の石焼やステーキ御膳、すき焼き、しゃぶしゃぶなどを堪能できます。"
+        },
+        ko: {
+          tag: "🥩 오미규 노포·화요일 영업",
+          name: "오미규 모리시마 본점 (近江牛 毛利志満)",
+          area: "오미하치만시 히가시가와초 (국도 8호선 변·차량 필수)",
+          catchCopy: "직영 목장의 최상급 오미규. 돌구이·스테이크 정식·스키야키 전문점.",
+          hours: "점심 11:00~15:00(LO14:00) / 저녁 17:00~20:30(LO19:30) ※화요일 영업",
+          access: "역에서 떨어진 국도 8호선 대로변에 위치해 차량 접근에 최적화된 본점.",
+          desc: "직영 목장에서 기른 최상급 오미규 전문점. 명물 돌구이(이시야키), 스테이크 정식, 스키야키 등을 맛볼 수 있습니다."
+        },
         photoQuery: "近江牛 毛利志満 近江八幡本店 料理",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=近江牛+毛利志満+近江八幡本店",
         webUrl: "https://www.omigyu-morishima.com/",
         koyoUrl: ""
       },
       {
-        id: "yakinikuyui",
-        num: "14",
-        cat: "food",
-        categoryEn: "OMI BEEF YAKINIKU",
-        tag: "近江牛焼肉・夜ディナー",
-        koTag: "오미규 야키니쿠·저녁 디너",
-        name: "近江牛 焼肉 結",
-        reading: "ゆい",
-        koName: "오미규 야키니쿠 유이 (류오초)",
-        area: "竜王町・山之上（名神 竜王IC近く）",
-        koArea: "류오초 야마노우에 (류오IC 인근)",
-        hours: "夜 17:00〜22:00頃 ※月曜定休（火曜営業）",
-        koHours: "저녁 17:00~22:00경 ※월요일 휴무 (화요일 정상영업)",
-        access: "竜王ICに向かう県道沿いにあり車必須（無料駐車場あり）。",
-        koAccess: "류오IC로 향하는 도로변에 위치해 자동차 필수 (무료 주차장 완비).",
-        desc: "ライトアップを見終わった後（19:30頃〜）、高速に乗る前にガッツリ近江牛焼肉を食べるならここ。高コスパで肉質抜群の人気店。",
-        koDesc: "야간 라이트업 관람 후(19:30경~), 고속도로를 타기 전에 가성비 최고급 오미규 야키니쿠를 즐기기에 완벽한 인기 맛집.",
+        id: "yakinikuyui", cat: "food",
+        ja: {
+          tag: "🔥 近江牛焼肉・夜ディナー",
+          name: "近江牛 焼肉 結（ゆい）",
+          area: "竜王町・山之上（名神 竜王IC近く）",
+          catchCopy: "ライトアップ後に高速へ乗る前の近江牛焼肉ディナーに最適！高コスパ人気店。",
+          hours: "夜 17:00〜22:00頃 ※月曜定休（火曜営業）",
+          access: "竜王ICに向かう県道沿いにあり車必須（無料駐車場あり）。",
+          desc: "ライトアップを見終わった後（19:30頃〜）、高速に乗る前にガッツリ近江牛焼肉を食べるならここ。高コスパで肉質抜群の人気店です。"
+        },
+        ko: {
+          tag: "🔥 오미규 야키니쿠·저녁 디너",
+          name: "오미규 야키니쿠 유이 (近江牛 焼肉 結)",
+          area: "류오초 야마노우에 (류오IC 인근)",
+          catchCopy: "라이트업 관람 후 고속도로 타기 전 저녁 식사로 완벽한 고기 맛집!",
+          hours: "저녁 17:00~22:00경 ※월요일 휴무 (화요일 정상영업)",
+          access: "류오IC로 향하는 도로변에 위치해 자동차 필수 (무료 주차장 완비).",
+          desc: "야간 라이트업 관람 후(19:30경~), 고속도로를 타기 전에 가성비 최고급 오미규 야키니쿠를 즐기기에 완벽한 인기 맛집입니다."
+        },
         photoQuery: "滋賀 竜王 焼肉 結",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=焼肉+結+滋賀県竜王町",
         webUrl: "https://tabelog.com/shiga/A2503/A250301/25009680/",
         koyoUrl: ""
       },
       {
-        id: "ikedafarm",
-        num: "15",
-        cat: "food",
-        categoryEn: "FARM GELATO",
-        tag: "山あいの牧場ジェラート",
-        koTag: "산속 목장 수제 젤라또",
-        name: "池田牧場 ジェラート「香想」",
-        reading: "かそう",
-        koName: "이케다 목장 이탈리안 젤라또 '카소'",
-        area: "東近江市・和南町（永源寺から車約7分）",
-        koArea: "히가시오미시 와나미초 (에이겐지에서 차로 약 7분)",
-        hours: "10:00〜17:00 ※水曜定休（火曜営業）",
-        koHours: "10:00~17:00 ※수요일 휴무 (화요일 영업)",
-        access: "山あいの牧場敷地内にあり車必須。永源寺へ向かう前の立ち寄りに最適。",
-        koAccess: "산속 목장 부지 내에 있어 자동차 필수. 에이겐지 가기 전 들르기 최고.",
-        desc: "永源寺のすぐ近くにある牧場直営ジェラート店。搾りたて生乳を使った濃厚ミルクや季節のフルーツジェラートが絶品。",
-        koDesc: "에이겐지 바로 근처 목장 직영 젤라또 가게. 갓 짜낸 신선한 우유로 만든 진한 밀크 젤라또와 제철 과일 맛이 일품.",
+        id: "ikedafarm", cat: "food",
+        ja: {
+          tag: "🍨 山あいの牧場ジェラート",
+          name: "池田牧場 ジェラート「香想（かそう）」",
+          area: "東近江市・和南町（永源寺から車約7分）",
+          catchCopy: "永源寺すぐ近くの山あい牧場。搾りたて生乳を使った濃厚ジェラート！",
+          hours: "10:00〜17:00 ※水曜定休（火曜営業）",
+          access: "山あいの牧場敷地内にあり車必須。永源寺へ向かう前の立ち寄りに最適。",
+          desc: "永源寺のすぐ近くにある牧場直営ジェラート店。搾りたて生乳を使った濃厚ミルクや季節のフルーツジェラートが絶品です。"
+        },
+        ko: {
+          tag: "🍨 산속 목장 수제 젤라또",
+          name: "이케다 목장 젤라또 '카소' (池田牧場 香想)",
+          area: "히가시오미시 와나미초 (에이겐지에서 차로 약 7분)",
+          catchCopy: "에이겐지 바로 근처 산속 목장. 갓 짜낸 신선한 우유로 만든 진한 젤라또!",
+          hours: "10:00~17:00 ※수요일 휴무 (화요일 영업)",
+          access: "산속 목장 부지 내에 있어 자동차 필수. 에이겐지 가기 전 들르기 최고.",
+          desc: "에이겐지 바로 근처 목장 직영 젤라또 가게. 갓 짜낸 신선한 우유로 만든 진한 밀크 젤라또와 제철 과일 맛이 일품입니다."
+        },
         photoQuery: "東近江 池田牧場 ジェラート 香想",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=池田牧場+香想+東近江",
         webUrl: "https://www.ikedabokujyo.com/",
         koyoUrl: ""
       },
       {
-        id: "hitomiwinery",
-        num: "16",
-        cat: "food",
-        categoryEn: "WINERY & BAKERY",
-        tag: "ワイナリー＆焼きたてパン",
-        koTag: "와이너리 & 갓 구운 빵",
-        name: "ヒトミワイナリー",
-        reading: "Hitomi Winery",
-        koName: "히토미 와이너리 (히가시오미시)",
-        area: "東近江市・山上町（永源寺から車約5分）",
-        koArea: "히가시오미시 야마카미초 (에이겐지에서 차로 약 5분)",
-        hours: "11:00〜17:00 ※火曜営業",
-        koHours: "11:00~17:00 ※화요일 영업",
-        access: "国道421号沿いの車専用立地（大型駐車場あり）。",
-        koAccess: "국도 421호선 변에 위치한 드라이브 코스 명소 (주차장 완비).",
-        desc: "日本でも珍しい「にごりワイン」専門のワイナリー。併設ベーカリーの香ばしいパンが人気で、ドライバー以外の同乗者はワイン試飲も可能。",
-        koDesc: "일본에서 보기 드문 '니고리 와인(탁주 스타일 와인)' 전문 와이너리. 베이커리의 빵도 맛있으며 운전자 외 동승자는 와인 시음 가능.",
+        id: "hitomiwinery", cat: "food",
+        ja: {
+          tag: "🍷 ワイナリー＆焼きたてパン",
+          name: "ヒトミワイナリー",
+          area: "東近江市・山上町（永源寺から車約5分）",
+          catchCopy: "にごりワイン専門ワイナリー。併設ベーカリーの焼きたてパンも大人気！",
+          hours: "11:00〜17:00 ※火曜営業",
+          access: "国道421号沿いの車専用立地（大型駐車場あり）。",
+          desc: "日本でも珍しい「にごりワイン」専門のワイナリー。併設ベーカリーの香ばしいパンが人気で、ドライバー以外の同乗者はワイン試飲も可能です。"
+        },
+        ko: {
+          tag: "🍷 와이너리 & 갓 구운 빵",
+          name: "히토미 와이너리 (ヒトミワイナリー)",
+          area: "히가시오미시 야마카미초 (에이겐지에서 차로 약 5분)",
+          catchCopy: "니고리 와인 전문 와이너리. 베이커리의 갓 구운 빵도 인기!",
+          hours: "11:00~17:00 ※화요일 영업",
+          access: "국도 421호선 변에 위치한 드라이브 코스 명소 (주차장 완비).",
+          desc: "일본에서 보기 드문 '니고리 와인(탁주 스타일 와인)' 전문 와이너리. 베이커리의 빵도 맛있으며 운전자 외 동승자는 와인 시음이 가능합니다."
+        },
         photoQuery: "東近江 ヒトミワイナリー パン",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=ヒトミワイナリー+東近江",
         webUrl: "https://www.hitomiwinery.com/",
         koyoUrl: ""
       },
       {
-        id: "taneyayokaichi",
-        num: "17",
-        cat: "food",
-        categoryEn: "FOREST CAFE",
-        tag: "森の中の限定カフェ",
-        koTag: "숲속의 한정판 바움쿠헨 카페",
-        name: "たねや 八日市の杜",
-        reading: "ようかいちのもり",
-        koName: "타네야 요카이치노모리 (히가시오미시)",
-        area: "東近江市・尻無町（名神 八日市ICから車約5分）",
-        koArea: "히가시오미시 시리나시초 (요카이치IC에서 차로 약 5분)",
-        hours: "10:00〜17:00（カフェLO 16:00）※無休",
-        koHours: "10:00~17:00 (카페 주문 마감 16:00) ※연중무휴",
-        access: "駅から離れた森の中にあり車で行くのに最適（無料駐車場完備）。",
-        koAccess: "역에서 떨어진 숲속에 자리해 차로 방문하기 최적 (무료 주차장 완비).",
-        desc: "静かな森の中に佇む「たねや・クラブハリエ」の特別店舗。ここだけの限定メニュー「焼きたてバームクーヘン」や季節の和菓子を落ち着いた空間で楽しめる。",
-        koDesc: "조용한 숲속에 자리한 '타네야·클럽하리에' 특별 매장. 이곳에서만 맛볼 수 있는 한정 메뉴 '갓 구운 바움쿠헨'과 디저트를 여유롭게 즐길 수 있음.",
+        id: "taneyayokaichi", cat: "food",
+        ja: {
+          tag: "🍰 森の中の限定カフェ",
+          name: "たねや 八日市の杜（ようかいちのもり）",
+          area: "東近江市・尻無町（名神 八日市ICから車約5分）",
+          catchCopy: "静かな森の中の特別店舗。ここだけの限定「焼きたてバームクーヘン」！",
+          hours: "10:00〜17:00（カフェLO 16:00）※無休",
+          access: "駅から離れた森の中にあり車で行くのに最適（無料駐車場完備）。",
+          desc: "静かな森の中に佇む「たねや・クラブハリエ」の特別店舗。ここだけの限定メニュー「焼きたてバームクーヘン」や季節の和菓子を楽しめます。"
+        },
+        ko: {
+          tag: "🍰 숲속의 한정판 바움쿠헨 카페",
+          name: "타네야 요카이치노모리 (たねや 八日市の杜)",
+          area: "히가시오미시 시리나시초 (요카이치IC에서 차로 약 5분)",
+          catchCopy: "조용한 숲속 특별 매장. 이곳에서만 맛보는 한정판 '갓 구운 바움쿠헨'!",
+          hours: "10:00~17:00 (카페 주문 마감 16:00) ※연중무휴",
+          access: "역에서 떨어진 숲속에 자리해 차로 방문하기 최적 (무료 주차장 완비).",
+          desc: "조용한 숲속에 자리한 '타네야·클럽하리에' 특별 매장. 이곳에서만 맛볼 수 있는 한정 메뉴 '갓 구운 바움쿠헨'을 즐길 수 있습니다."
+        },
         photoQuery: "たねや 八日市の杜 バームクーヘン",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=たねや+八日市の杜",
         webUrl: "https://taneya.jp/shop/shiga_yokaichi.html",
         koyoUrl: ""
       },
-
-      // 4. 温泉＋食事（1件）
       {
-        id: "happunoyu",
-        num: "18",
-        cat: "onsen",
-        categoryEn: "NATURAL HOT SPRING",
-        tag: "天然温泉＆近江牛夕食",
-        koTag: "천연 온천 & 오미규 저녁 식사",
-        name: "永源寺温泉「八風の湯」",
-        reading: "はっぷうのゆ",
-        koName: "에이겐지 온천 '핫푸노유'",
-        area: "東近江市・永源寺高野町（永源寺から車約2分）",
-        koArea: "히가시오미시 에이겐지타카노초 (에이겐지에서 차로 2분)",
-        hours: "10:00〜22:00（最終受付21:00 / 食事処LO 21:00頃）※無休",
-        koHours: "10:00~22:00 (입장 마감 21:00 / 식당 주문 마감 21:00경) ※연중무휴",
-        access: "永源寺のすぐ近くにあるが夜間は公共交通がないため車必須（無料駐車場完備）。",
-        koAccess: "에이겐지 바로 옆이지만 야간 대중교통이 없어 자동차 필수 (무료 주차장 완비).",
-        desc: "ライトアップ鑑賞で冷えた体を一気に温められる天然温泉。渓谷を望む露天風呂に加え、館内の食事処「山水」で近江牛すき焼き鍋や御膳も食べられる。",
-        koDesc: "야간 라이트업 관람 후 차가워진 몸을 녹일 수 있는 천연 온천. 계곡 노천탕은 물론 관내 식당에서 오미규 스키야키 전골 등 저녁 식사까지 한 번에 해결 가능.",
+        id: "happunoyu", cat: "onsen",
+        ja: {
+          tag: "♨️ 天然温泉＆近江牛夕食",
+          name: "永源寺温泉「八風の湯（はっぷうのゆ）」",
+          area: "東近江市・永源寺高野町（永源寺から車約2分！）",
+          catchCopy: "永源寺のすぐ隣！渓谷露天風呂＆館内で近江牛すき焼き夕食まで一気に完結。",
+          hours: "10:00〜22:00（最終受付21:00 / 食事処LO 21:00頃）※無休",
+          access: "永源寺のすぐ近くにあるが夜間は公共交通がないため車必須（無料駐車場完備）。",
+          desc: "ライトアップ鑑賞で冷えた体を一気に温められる天然温泉。渓谷を望む露天風呂に加え、館内の食事処「山水」で近江牛すき焼き鍋や御膳も食べられます。"
+        },
+        ko: {
+          tag: "♨️ 천연 온천 & 오미규 저녁 식사",
+          name: "에이겐지 온천 '핫푸노유' (八風の湯)",
+          area: "히가시오미시 에이겐지타카노초 (에이겐지에서 차로 2분!)",
+          catchCopy: "에이겐지 바로 옆! 계곡 노천탕 온천욕 & 오미규 저녁 식사까지 한 번에 해결.",
+          hours: "10:00~22:00 (입장 마감 21:00 / 식당 주문 마감 21:00경) ※연중무휴",
+          access: "에이겐지 바로 옆이지만 야간 대중교통이 없어 자동차 필수 (무료 주차장 완비).",
+          desc: "야간 라이트업 관람 후 차가워진 몸을 녹일 수 있는 천연 온천. 계곡 노천탕은 물론 관내 식당에서 오미규 스키야키 전골 등 저녁 식사까지 가능합니다."
+        },
         photoQuery: "永源寺温泉 八風の湯 露天風呂 食事",
         mapUrl: "https://www.google.com/maps/search/?api=1&query=永源寺温泉+八風の湯",
         webUrl: "https://www.happuno-yu.com/eigenji/",
@@ -742,41 +831,72 @@
       }
     ];
 
-    let selectedIds = new Set(["eigenji", "kyorinbo"]);
-    let currentFilter = "all";
+    function toggleLanguage() {
+      currentLang = currentLang === "ja" ? "ko" : "ja";
+      applyUiLanguage();
+      selectPlan(currentPlan);
+      renderCards();
+    }
 
-    function toggleKorean() {
-      document.body.classList.toggle("show-ko");
-      const isShow = document.body.classList.contains("show-ko");
-      document.getElementById("langToggleLabel").textContent = isShow ? "한국어 OFF" : "한국어 ON";
+    function applyUiLanguage() {
+      const t = uiText[currentLang];
+      document.getElementById("headerTitle").textContent = t.headerTitle;
+      document.getElementById("langBtnText").textContent = t.langBtnText;
+      document.getElementById("labelMembers").textContent = t.labelMembers;
+      document.getElementById("subCar").textContent = t.subCar;
+      document.getElementById("labelTime").textContent = t.labelTime;
+      document.getElementById("valTime").textContent = t.valTime;
+      document.getElementById("linkStation").textContent = t.linkStation;
+      document.getElementById("labelKoyoAll").textContent = t.labelKoyoAll;
+      document.getElementById("btnWeather").textContent = t.btnWeather;
+      document.getElementById("btnBiwako").textContent = t.btnBiwako;
+      document.getElementById("alertTitle").textContent = t.alertTitle;
+      document.getElementById("alertDesc").innerHTML = t.alertDesc;
+      document.getElementById("lu1Name").textContent = t.lu1Name;
+      document.getElementById("lu1Time").textContent = t.lu1Time;
+      document.getElementById("lu2Name").textContent = t.lu2Name;
+      document.getElementById("lu2Time").textContent = t.lu2Time;
+      document.getElementById("btnRoute2").textContent = t.btnRoute2;
+      document.getElementById("sec1Title").textContent = t.sec1Title;
+      document.getElementById("sec1Sub").textContent = t.sec1Sub;
+      document.getElementById("tabPlanASub").textContent = t.tabPlanASub;
+      document.getElementById("tabPlanBSub").textContent = t.tabPlanBSub;
+      document.getElementById("tabPlanCSub").textContent = t.tabPlanCSub;
+      document.getElementById("sec2Title").textContent = t.sec2Title;
+      document.getElementById("sec2Sub").textContent = t.sec2Sub;
+      document.getElementById("catAll").textContent = t.catAll;
+      document.getElementById("catMain").textContent = t.catMain;
+      document.getElementById("catSpot").textContent = t.catSpot;
+      document.getElementById("catFood").textContent = t.catFood;
+      document.getElementById("catOnsen").textContent = t.catOnsen;
+      document.getElementById("footerLabel").textContent = t.footerLabel;
+      document.getElementById("footerUnit").textContent = t.footerUnit;
+      document.getElementById("btnCopyLine").textContent = t.btnCopyLine;
+      document.getElementById("toast").textContent = t.toast;
     }
 
     function selectPlan(planKey) {
+      currentPlan = planKey;
       ["A", "B", "C"].forEach(k => {
         const btn = document.getElementById("btnPlan" + k);
-        btn.className = (k === planKey ? "plan-tab-active" : "plan-tab-inactive") + " border px-4 py-2 text-xs tracking-wider transition";
+        btn.className = (k === planKey ? "tab-active" : "tab-inactive") + " border rounded-xl py-3 px-2 text-xs sm:text-sm font-bold transition text-center";
       });
 
-      const p = plans[planKey];
+      const p = plans[planKey][currentLang];
       const stepsHtml = p.steps.map(s => `
-        <div class="grid grid-cols-[56px_1fr] sm:grid-cols-[72px_1fr] gap-4 py-3.5 border-b hairline-border last:border-b-0 items-baseline">
-          <div class="font-serif-en text-base sm:text-lg font-semibold text-[#8C2D19]">${s.time}</div>
+        <div class="flex gap-3.5 py-3 border-b border-[#EAE6DF] last:border-b-0 items-baseline">
+          <div class="font-serif-en text-base sm:text-lg font-bold text-[#9A2B17] w-12 shrink-0">${s.time}</div>
           <div>
-            <div class="text-sm font-medium text-[#1C1B1A]">${s.place}</div>
-            <div class="ko-text text-xs text-[#8C2D19] mt-0.5">${s.koPlace}</div>
-            <div class="text-xs text-[#68645E] mt-1 font-light">${s.note}</div>
-            <div class="ko-text text-[11px] text-[#68645E] mt-0.5">${s.koNote}</div>
+            <div class="text-sm sm:text-base font-bold text-[#1A1918]">${s.place}</div>
+            <div class="text-xs sm:text-sm text-[#57534E] mt-0.5">${s.note}</div>
           </div>
         </div>
       `).join("");
 
       document.getElementById("planContent").innerHTML = `
-        <div class="pb-5 mb-2 border-b hairline-border">
-          <span class="font-serif-en text-xs uppercase tracking-[0.2em] text-[#8C2D19] font-semibold">${p.code}</span>
-          <h3 class="text-lg font-medium text-[#1C1B1A] mt-1">${p.title}</h3>
-          <div class="ko-text text-xs text-[#68645E] mt-0.5">${p.koTitle}</div>
-          <p class="text-xs sm:text-sm text-[#4A4743] mt-2 font-light leading-relaxed">${p.desc}</p>
-          <p class="ko-text text-xs text-[#68645E] mt-1 leading-relaxed">${p.koDesc}</p>
+        <div class="pb-3 mb-2 border-b border-[#DFDBD2]">
+          <h3 class="text-base sm:text-lg font-bold text-[#1A1918]">${p.title}</h3>
+          <p class="text-xs sm:text-sm text-[#57534E] mt-1 leading-relaxed">${p.desc}</p>
         </div>
         <div>${stepsHtml}</div>
       `;
@@ -785,10 +905,10 @@
     function filterCategory(cat) {
       currentFilter = cat;
       document.querySelectorAll(".cat-btn").forEach(btn => {
-        btn.className = "cat-btn bg-white text-[#68645E] hover:text-[#1C1B1A] text-xs px-3.5 py-1.5 border hairline-border shrink-0 transition";
+        btn.className = "cat-btn bg-white text-[#57534E] text-xs sm:text-sm font-bold px-4 py-2 rounded-full border border-[#D6D1C9] shrink-0 transition";
       });
       const activeMap = { all: "catAll", main: "catMain", spot: "catSpot", food: "catFood", onsen: "catOnsen" };
-      document.getElementById(activeMap[cat]).className = "cat-btn bg-[#1C1B1A] text-white text-xs px-3.5 py-1.5 border border-[#1C1B1A] shrink-0 transition";
+      document.getElementById(activeMap[cat]).className = "cat-btn bg-[#1A1918] text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-full border border-[#1A1918] shrink-0 transition";
       renderCards();
     }
 
@@ -798,95 +918,94 @@
       } else {
         selectedIds.add(id);
       }
-      updateSelectedCount();
+      document.getElementById("selectedCount").textContent = items.filter(i => selectedIds.has(i.id)).length;
       renderCards();
     }
 
-    function updateSelectedCount() {
-      const count = items.filter(i => selectedIds.has(i.id)).length;
-      document.getElementById("selectedCount").textContent = count;
+    function toggleExpand(id) {
+      if (expandedIds.has(id)) {
+        expandedIds.delete(id);
+      } else {
+        expandedIds.add(id);
+      }
+      renderCards();
     }
 
     function renderCards() {
+      const t = uiText[currentLang];
       const filtered = currentFilter === "all" ? items : items.filter(i => i.cat === currentFilter);
+
       const html = filtered.map(item => {
+        const data = item[currentLang];
         const isSelected = selectedIds.has(item.id);
+        const isExpanded = expandedIds.has(item.id);
         const realPhotoUrl = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(item.photoQuery)}`;
-        const koyoLink = item.koyoUrl ? `
-          <a href="${item.koyoUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="text-xs text-[#8C2D19] hover:opacity-70 underline underline-offset-4 transition">
-            紅葉状況 <span class="ko-inline">(단풍현황)</span> ↗
-          </a>
-        ` : "";
 
         return `
-          <article class="bg-white border hairline-border p-6 flex flex-col justify-between transition ${isSelected ? 'card-selected' : 'hover:border-[#B8B2A8]'}">
-            <div class="space-y-4">
-              <!-- カード上部メタ＆選択ボタン -->
-              <div class="flex items-center justify-between gap-2 pb-3 border-b hairline-border">
-                <div class="flex items-baseline gap-2.5">
-                  <span class="font-serif-en text-sm font-semibold text-[#8C2D19]">${item.num}</span>
-                  <span class="font-serif-en text-[11px] uppercase tracking-[0.18em] text-[#68645E]">${item.categoryEn}</span>
-                </div>
-                <button onclick="toggleSelect('${item.id}')" class="text-[11px] tracking-wider px-3 py-1 border transition ${isSelected ? 'bg-[#8C2D19] text-white border-[#8C2D19]' : 'bg-transparent text-[#68645E] hairline-border hover:border-[#1C1B1A] hover:text-[#1C1B1A]'}">
-                  ${isSelected ? 'SELECTED / 選択中' : '+ SELECT / 候補追加'}
+          <article class="bg-white rounded-2xl border-2 border-[#DFDBD2] p-5 flex flex-col justify-between transition shadow-sm ${isSelected ? 'card-selected' : ''}">
+            <div class="space-y-3">
+              <!-- 上部タグ＆選択ボタン -->
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-xs font-bold text-[#9A2B17] bg-[#FDF6F0] border border-[#E8C5B0] px-2.5 py-1 rounded-full">
+                  ${data.tag}
+                </span>
+                <button onclick="toggleSelect('${item.id}')" class="text-xs sm:text-sm font-bold px-3.5 py-1.5 rounded-full border transition ${isSelected ? 'bg-[#9A2B17] text-white border-[#9A2B17]' : 'bg-white text-[#1A1918] border-[#D6D1C9] hover:border-[#1A1918]'}">
+                  ${isSelected ? t.selectBtnOn : t.selectBtnOff}
                 </button>
               </div>
 
-              <!-- タイトル -->
+              <!-- タイトル・エリア・一言キャッチ -->
               <div>
-                <div class="text-[11px] text-[#8C2D19] font-medium mb-1">
-                  ${item.tag} <span class="ko-inline">/ ${item.koTag}</span>
-                </div>
-                <h3 class="text-lg sm:text-xl font-medium text-[#1C1B1A] leading-snug">
-                  ${item.name}
-                  <span class="text-xs font-normal text-[#68645E] ml-1.5">${item.reading}</span>
-                </h3>
-                <div class="ko-text text-xs font-medium text-[#68645E] mt-1">${item.koName}</div>
+                <h3 class="text-lg sm:text-xl font-bold text-[#1A1918] leading-snug">${data.name}</h3>
+                <div class="text-xs sm:text-sm text-[#68645E] mt-1">📍 ${data.area}</div>
+                <p class="text-sm text-[#292524] font-medium mt-2 leading-relaxed bg-[#F7F5F2] p-3 rounded-xl">
+                  ${data.catchCopy}
+                </p>
               </div>
 
-              <!-- 場所・時間 -->
-              <div class="text-xs text-[#68645E] space-y-1 pt-1">
-                <div><span class="text-[#1C1B1A] font-medium">Location:</span> ${item.area} <span class="ko-inline">(${item.koArea})</span></div>
-                <div><span class="text-[#1C1B1A] font-medium">Hours:</span> ${item.hours}</div>
-                <div class="ko-text text-[11px] text-[#68645E]">${item.koHours}</div>
-              </div>
-
-              <!-- 解説 -->
-              <div class="space-y-2 pt-1">
-                <p class="text-xs sm:text-sm text-[#3A3835] leading-relaxed font-light">${item.desc}</p>
-                <p class="ko-text text-xs text-[#68645E] leading-relaxed bg-[#F9F8F6] p-3 border hairline-border">${item.koDesc}</p>
-              </div>
-
-              <!-- 車アクセス理由 -->
-              <div class="bg-[#F2EFE9] p-3 text-xs text-[#3A3835] leading-relaxed">
-                <span class="font-medium text-[#1C1B1A]">By Car:</span> ${item.access}
-                <div class="ko-text text-[11px] text-[#68645E] mt-1">${item.koAccess}</div>
+              <!-- アコーディオン詳細（タップで開閉） -->
+              <div>
+                <button onclick="toggleExpand('${item.id}')" class="text-xs sm:text-sm font-bold text-[#57534E] hover:text-[#1A1918] py-1 flex items-center gap-1">
+                  <span>${isExpanded ? t.detailClose : t.detailOpen}</span>
+                </button>
+                ${isExpanded ? `
+                  <div class="mt-2 pt-3 border-t border-[#EAE6DF] space-y-2.5 text-xs sm:text-sm text-[#3A3835] leading-relaxed">
+                    <div><strong>🕒 営業時間：</strong>${data.hours}</div>
+                    <div><strong>🚗 車で行く理由：</strong>${data.access}</div>
+                    <p class="text-[#57534E]">${data.desc}</p>
+                  </div>
+                ` : ''}
               </div>
             </div>
 
-            <!-- フッターリンク群（控えめで上品なテキストリンク構成） -->
-            <div class="pt-4 mt-5 border-t hairline-border flex flex-wrap items-center gap-x-4 gap-y-2">
-              <a href="${realPhotoUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="text-xs font-medium text-[#1C1B1A] hover:text-[#8C2D19] underline underline-offset-4 transition">
-                現地写真 <span class="ko-inline">(실제사진)</span> ↗
+            <!-- 親指で押しやすい大きなボタン群 -->
+            <div class="pt-4 mt-4 border-t border-[#EAE6DF] grid grid-cols-2 gap-2">
+              <a href="${item.mapUrl}" target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 rounded-xl bg-[#1A1918] hover:bg-[#3A3835] text-white text-xs sm:text-sm font-bold text-center transition">
+                ${t.btnMap} ↗
               </a>
-              <a href="${item.mapUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="text-xs font-medium text-[#1C1B1A] hover:text-[#8C2D19] underline underline-offset-4 transition">
-                Google Maps <span class="ko-inline">(지도)</span> ↗
+              <a href="${realPhotoUrl}" target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 rounded-xl bg-[#9A2B17] hover:bg-[#7D2211] text-white text-xs sm:text-sm font-bold text-center transition">
+                ${t.btnPhoto} ↗
               </a>
-              <a href="${item.webUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="text-xs font-medium text-[#1C1B1A] hover:text-[#8C2D19] underline underline-offset-4 transition">
-                Official Site <span class="ko-inline">(공식웹)</span> ↗
+              <a href="${item.webUrl}" target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 rounded-xl bg-[#F7F5F2] hover:bg-[#EAE6DF] text-[#1A1918] border border-[#D6D1C9] text-xs sm:text-sm font-bold text-center transition ${item.koyoUrl ? '' : 'col-span-2'}">
+                ${t.btnWeb} ↗
               </a>
-              ${koyoLink}
+              ${item.koyoUrl ? `
+                <a href="${item.koyoUrl}" target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 rounded-xl bg-[#FDF6F0] hover:bg-[#F5E6D8] text-[#9A2B17] border border-[#E8C5B0] text-xs sm:text-sm font-bold text-center transition">
+                  ${t.btnKoyo} ↗
+                </a>
+              ` : ''}
             </div>
           </article>
         `;
       }).join("");
+
       document.getElementById("cardsContainer").innerHTML = html;
     }
 
     function copyForLine() {
       const chosen = items.filter(i => selectedIds.has(i.id));
       const chosenText = chosen.length > 0
-        ? chosen.map(c => `・${c.name} / ${c.koName}\n  ${c.mapUrl}`).join("\n")
+        ? chosen.map(c => `・${c.ja.name} / ${c.ko.name}\n  ${c.mapUrl}`).join("\n")
         : "・（これから相談 / 이제부터 상담）";
 
       const text = `【11/17(火) 滋賀・湖東紅葉ドライブ / 시가 단풍 드라이브】
@@ -894,9 +1013,9 @@
 集合：12:00 烏丸御池 (가라스마오이케 출발)
 
 ■ 火曜日のライトアップ時間制限（要注意）
-01. 永源寺 (에이겐지)：17:00〜18:30閉門
-02. 教林坊 (교린보)：17:30〜19:30（19:00最終受付）
-※両方見る場合は「16:00永源寺 → 17:45出発 → 18:20教林坊」の順で移動
+① 永源寺 (에이겐지)：17:00〜18:30閉門
+② 教林坊 (교린보)：17:30〜19:30（19:00最終受付）
+※両方見るなら「16:00永源寺 → 17:45出発 → 18:20教林坊」の順！
 
 ■ 立ち寄り候補リスト / 후보 리스트：
 ${chosenText}
@@ -910,8 +1029,8 @@ Webしおり：https://sanjo-guide.github.io/shiga-drive/`;
       });
     }
 
+    applyUiLanguage();
     selectPlan("A");
-    updateSelectedCount();
     renderCards();
   </script>
 </body>
